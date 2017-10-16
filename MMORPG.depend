@@ -1,0 +1,369 @@
+# depslib dependency file v1.0
+1508147058 source:c:\users\alex\documents\code\mmorpg\main.cpp
+	"Engine.h"
+
+1508147211 source:c:\users\alex\documents\code\mmorpg\src\engine.cpp
+	"Engine.h"
+
+1508147198 c:\users\alex\documents\code\mmorpg\include\engine.h
+	"WindowManager.h"
+	"ObjectManager.h"
+	"StateManager.h"
+	"NetworkManager.h"
+
+1508147243 source:c:\users\alex\documents\code\mmorpg\src\windowmanager.cpp
+	"WindowManager.h"
+
+1508147228 c:\users\alex\documents\code\mmorpg\include\windowmanager.h
+	<SFML/Graphics/RenderWindow.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\config.hpp
+	"TargetConditionals.h"
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\vector2.inl
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\rect.inl
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\blendmode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\primitivetype.hpp
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\window.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\contextsettings.hpp
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\windowstyle.hpp
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\utf.inl
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\string.inl
+
+1508144073 source:c:\users\alex\documents\code\mmorpg\src\objectmanager.cpp
+	"ObjectManager.h"
+
+1508143813 c:\users\alex\documents\code\mmorpg\include\objectmanager.h
+	<vector>
+	"WindowManager.h"
+	"GameObject.h"
+
+1508143606 c:\users\alex\documents\code\mmorpg\include\objects\gameobject.h
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Texture.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1508143620 source:c:\users\alex\documents\code\mmorpg\src\objects\gameobject.cpp
+	"GameObject.h"
+
+1508145129 c:\users\alex\documents\code\mmorpg\include\gamestates\statemanager.h
+	"GameState.h"
+	<stack>
+
+1508145190 c:\users\alex\documents\code\mmorpg\include\gamestates\gamestate.h
+
+1508144751 source:c:\users\alex\documents\code\mmorpg\src\gamestates\gamestate.cpp
+	"GameState.h"
+
+1508147429 source:c:\users\alex\documents\code\mmorpg\src\gamestates\statemanager.cpp
+	"StateManager.h"
+
+1508145934 source:c:\users\alex\documents\code\mmorpg\src\debug.cpp
+	"Debug.h"
+
+1508145922 c:\users\alex\documents\code\mmorpg\include\debug.h
+	<iostream>
+	<string>
+
+1508145958 c:\users\alex\documents\code\mmorpg\include\networkmanager.h
+	<SFML/Network.hpp>
+	"Debug.h"
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network.hpp
+	<SFML/System.hpp>
+	<SFML/Network/Ftp.hpp>
+	<SFML/Network/Http.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/SocketHandle.hpp>
+	<SFML/Network/SocketSelector.hpp>
+	<SFML/Network/TcpListener.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/Network/UdpSocket.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\fileinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\memoryinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\thread.inl
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\threadlocalptr.inl
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\system\vector3.inl
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\ftp.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\export.hpp
+	<SFML/Config.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\tcpsocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/System/Time.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\socket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/SocketHandle.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<vector>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\sockethandle.hpp
+	<SFML/Config.hpp>
+	<basetsd.h>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\http.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<map>
+	<string>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\ipaddress.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+	<istream>
+	<ostream>
+	<string>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\packet.hpp
+	<SFML/Network/Export.hpp>
+	<string>
+	<vector>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\socketselector.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\tcplistener.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/IpAddress.hpp>
+
+1470646434 c:\users\alex\documents\code\sfml-2.4.0\include\sfml\network\udpsocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<vector>
+
+1508146722 source:c:\users\alex\documents\code\mmorpg\src\networkmanager.cpp
+	"NetworkManager.h"
+
