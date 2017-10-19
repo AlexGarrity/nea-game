@@ -3,27 +3,30 @@
 
 #include <SFML/Network.hpp>
 #include "Debug.h"
+#include <cstdio>
 
 class NetworkManager
 {
-    public:
-        /** Default constructor */
-        NetworkManager();
-        /** Default destructor */
-        virtual ~NetworkManager();
+public:
+    static void SendUDP(char message[64]);
+    static void SendTCP(char message[64]);
+    static void ReceiveUDP();
+    static void ReceiveTCP();
 
-        void SendUDP();
-        void SendTCP();
-        void ReceiveUDP();
-        void ReceiveTCP();
+    static void InitialiseSockets(const char* address, unsigned short tPort, unsigned short uPort);
 
-        void InitialiseSockets();
+    static void BindTCP(const char* address, unsigned short port);
+    static void BindUDP(unsigned short port);
 
-    protected:
+protected:
 
-    private:
-        sf::TcpSocket tcp;
-        sf::UdpSocket udp;
+private:
+    static sf::TcpSocket tcp;
+    static sf::UdpSocket udp;
+
+    static const char* serverAddress;
+    static unsigned short UDPPort;
+    static unsigned short TCPPort;
 };
 
 #endif // NETWORKMANAGER_H

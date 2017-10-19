@@ -7,20 +7,20 @@
 
 class GameObject
 {
-    public:
-        /** Default constructor */
-        GameObject();
-        /** Default destructor */
-        virtual ~GameObject();
+public:
+    /** Default constructor */
+    GameObject();
+    /** Default destructor */
+    virtual ~GameObject();
 
-        sf::Sprite& GetSprite();
+    sf::Sprite& GetSprite();
 
-    protected:
+protected:
 
-    private:
-        sf::Sprite sprite;
-        sf::Texture texture;
-        sf::Vector2f position;
+private:
+    sf::Sprite sprite;
+    sf::Texture texture;
+    sf::Vector2f position;
 };
 
 #endif // GAMEOBJECT_H

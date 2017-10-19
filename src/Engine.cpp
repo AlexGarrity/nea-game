@@ -3,7 +3,7 @@
 Engine::Engine()
 {
     WindowManager::SetFramerate(60);
-    networkManager.InitialiseSockets();
+    NetworkManager::InitialiseSockets("127.0.0.1", 6401, 6402);
 }
 
 void Engine::Start(short x, short y, short depth, const char name[])
@@ -20,7 +20,11 @@ void Engine::UpdateWindow()
 
 void Engine::GameLoop()
 {
-    WindowManager::Clear();
-    stateManager.Update();
-    WindowManager::Display();
+    while (WindowManager::WindowIsOpen())
+    {
+        WindowManager::Clear();
+        WindowManager::CheckEvents();
+        stateManager.Update();
+        WindowManager::Display();
+    }
 }

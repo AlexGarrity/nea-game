@@ -8,18 +8,16 @@
 
 class Engine
 {
-    public:
-        Engine();
-        void Start(short x, short y, short depth, const char name[]);
+public:
+    Engine();
+    void Start(short x, short y, short depth, const char name[]);
 
-    protected:
+protected:
 
-    private:
-        void GameLoop();
-        void UpdateWindow();
-        ObjectManager objectManager;
-        StateManager stateManager;
-        NetworkManager networkManager;
+private:
+    void GameLoop();
+    void UpdateWindow();
+    StateManager stateManager;
 };
 
 #endif // ENGINE_H

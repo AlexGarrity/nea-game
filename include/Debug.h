@@ -8,14 +8,13 @@
 class Debug
 {
 
-    public:
-        enum type {Warning, Error, Critical, Fatal};
-        static void Log(std::string message, type errorType);
+public:
+    enum type {Trace, Dbg, Info, Warn, Error, Fatal};
+    static void Log(std::string message, type errorType);
 
+protected:
 
-    protected:
-
-    private:
+private:
 };
 
 #endif // DEBUG_H

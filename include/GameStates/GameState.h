@@ -4,19 +4,19 @@
 
 class GameState
 {
-    public:
-        /** Default constructor */
-        GameState();
-        /** Default destructor */
-        virtual ~GameState();
+public:
+    /** Default constructor */
+    GameState();
+    /** Default destructor */
+    virtual ~GameState();
 
-        virtual void Input() =0;
-        virtual void Update() =0;
-        virtual void Draw() =0;
+    virtual void Input() =0;
+    virtual void Update() =0;
+    virtual void Draw() =0;
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // GAMESTATE_H

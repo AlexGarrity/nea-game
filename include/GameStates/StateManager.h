@@ -6,20 +6,15 @@
 
 class StateManager
 {
-    public:
-        /** Default constructor */
-        StateManager();
-        /** Default destructor */
-        virtual ~StateManager();
+public:
+    static void Update();
+    static void PushState(GameState* state);
+    static GameState* PopState();
 
-        void Update();
-        void PushState(GameState* state);
-        GameState* PopState();
+protected:
 
-    protected:
-
-    private:
-        std::stack <GameState*> stateList;
+private:
+    static std::stack <GameState*> stateList;
 };
 
 #endif // STATEMANAGER_H

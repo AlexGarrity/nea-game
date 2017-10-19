@@ -367,3 +367,420 @@
 1508146722 source:c:\users\alex\documents\code\mmorpg\src\networkmanager.cpp
 	"NetworkManager.h"
 
+1508427848 source:/home/alex/Documents/MMORPG/Game/main.cpp
+	"Engine.h"
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/Engine.h
+	"WindowManager.h"
+	"ObjectManager.h"
+	"StateManager.h"
+	"NetworkManager.h"
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/WindowManager.h
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Window/Event.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/RenderWindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Export.hpp
+	<SFML/Config.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Config.hpp
+	"TargetConditionals.h"
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/RenderTarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Vector2.inl
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Rect.inl
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/View.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/BlendMode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/RenderStates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/PrimitiveType.hpp
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/NonCopyable.hpp
+	<SFML/System/Export.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Export.hpp
+	<SFML/Config.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Export.hpp
+	<SFML/Config.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/ContextSettings.hpp
+	<SFML/Config.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/VideoMode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/WindowHandle.hpp
+	<SFML/Config.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/WindowStyle.hpp
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/GlResource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Time.hpp
+	<SFML/System/Export.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/String.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Utf.inl
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/String.inl
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/ObjectManager.h
+	<vector>
+	"WindowManager.h"
+	"GameObject.h"
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/Objects/GameObject.h
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Texture.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Graphics/Texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/GameStates/StateManager.h
+	"GameState.h"
+	<stack>
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/GameStates/GameState.h
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/NetworkManager.h
+	<SFML/Network.hpp>
+	"Debug.h"
+	<cstdio>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network.hpp
+	<SFML/System.hpp>
+	<SFML/Network/Ftp.hpp>
+	<SFML/Network/Http.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/SocketHandle.hpp>
+	<SFML/Network/SocketSelector.hpp>
+	<SFML/Network/TcpListener.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/Network/UdpSocket.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/FileInputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/InputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/MemoryInputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Thread.inl
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/ThreadLocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/ThreadLocalPtr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/ThreadLocalPtr.inl
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/Vector3.inl
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/Ftp.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/Export.hpp
+	<SFML/Config.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/TcpSocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/System/Time.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/Socket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/SocketHandle.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<vector>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/SocketHandle.hpp
+	<SFML/Config.hpp>
+	<basetsd.h>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/Http.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<map>
+	<string>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/IpAddress.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+	<istream>
+	<ostream>
+	<string>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/Packet.hpp
+	<SFML/Network/Export.hpp>
+	<string>
+	<vector>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/SocketSelector.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/TcpListener.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/IpAddress.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Network/UdpSocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<vector>
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/Debug.h
+	<iostream>
+	<string>
+
+1508427848 source:/home/alex/Documents/MMORPG/Game/src/Debug.cpp
+	"Debug.h"
+
+1508427848 source:/home/alex/Documents/MMORPG/Game/src/Engine.cpp
+	"Engine.h"
+
+1508400298 source:/home/alex/Documents/MMORPG/Game/src/GameStates/GameState.cpp
+	"GameState.h"
+
+1508410868 source:/home/alex/Documents/MMORPG/Game/src/GameStates/StateManager.cpp
+	"StateManager.h"
+
+1508427848 source:/home/alex/Documents/MMORPG/Game/src/NetworkManager.cpp
+	"NetworkManager.h"
+
+1508410692 source:/home/alex/Documents/MMORPG/Game/src/ObjectManager.cpp
+	"ObjectManager.h"
+
+1508400298 source:/home/alex/Documents/MMORPG/Game/src/Objects/GameObject.cpp
+	"GameObject.h"
+
+1508429101 source:/home/alex/Documents/MMORPG/Game/src/WindowManager.cpp
+	"WindowManager.h"
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/Window/Sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1508427642 source:/home/alex/Documents/MMORPG/Game/src/ResourceManager.cpp
+	"ResourceManager.h"
+
+1508427848 /home/alex/Documents/MMORPG/Game/include/ResourceManager.h
+	<fstream>
+	<map>
+	<SFML/Graphics/Image.hpp>
+
+1508428426 source:/home/alex/Documents/MMORPG/Game/src/Utilities/XMLParser.cpp
+	"XMLParser.h"
+
+1508427893 /home/alex/Documents/MMORPG/Game/include/Utilities/XMLParser.h
+	<vector>
+	<cstring>
+	<fstream>
+

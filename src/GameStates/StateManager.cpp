@@ -1,14 +1,6 @@
 #include "StateManager.h"
 
-StateManager::StateManager()
-{
-    //ctor
-}
-
-StateManager::~StateManager()
-{
-    //dtor
-}
+std::stack<GameState*> StateManager::stateList;
 
 void StateManager::PushState(GameState* state)
 {

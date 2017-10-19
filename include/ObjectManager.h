@@ -7,18 +7,13 @@
 
 class ObjectManager
 {
-    public:
-        /** Default constructor */
-        ObjectManager();
-        /** Default destructor */
-        virtual ~ObjectManager();
+public:
+    static void UpdateObjects();
 
-        void UpdateObjects();
+protected:
 
-    protected:
-
-    private:
-        std::vector<GameObject*> objectList;
+private:
+    static std::vector<GameObject*> objectList;
 };
 
 #endif // OBJECTMANAGER_H
