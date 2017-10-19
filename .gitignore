@@ -25,3 +25,6 @@
 *.la
 *.a
 *.lib
+
+# Code::Blocks unnecessary files
+*.layout
