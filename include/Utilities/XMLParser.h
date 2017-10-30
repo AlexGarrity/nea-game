@@ -2,8 +2,9 @@
 #define XMLPARSER_H
 
 #include <vector>
-#include <cstring>
+#include <string>
 #include <fstream>
+#include <tuple>
 
 class XMLParser
 {

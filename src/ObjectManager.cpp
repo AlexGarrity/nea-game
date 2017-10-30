@@ -10,3 +10,13 @@ void ObjectManager::UpdateObjects()
         WindowManager::Draw(objectList[i]->GetSprite());
     }
 }
+
+void ObjectManager::CreateObject(GameObject* object)
+{
+    objectList.push_back(object);
+}
+
+void ObjectManager::RemoveObject(unsigned int index)
+{
+    objectList.erase(objectList.begin() + (index - 1));
+}

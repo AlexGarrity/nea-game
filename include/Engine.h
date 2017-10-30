@@ -16,8 +16,6 @@ protected:
 
 private:
     void GameLoop();
-    void UpdateWindow();
-    StateManager stateManager;
 };
 
 #endif // ENGINE_H

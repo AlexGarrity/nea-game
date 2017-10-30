@@ -3,7 +3,7 @@
 sf::TcpSocket NetworkManager::tcp;
 sf::UdpSocket NetworkManager::udp;
 
-const char* NetworkManager::serverAddress;
+sf::IpAddress NetworkManager::serverAddress;
 unsigned short NetworkManager::UDPPort;
 unsigned short NetworkManager::TCPPort;
 
@@ -12,14 +12,13 @@ void NetworkManager::InitialiseSockets(const char* address, unsigned short tPort
     serverAddress = address;
     TCPPort = tPort;
     UDPPort = uPort;
-
-    BindTCP(serverAddress, TCPPort);
-    BindUDP(UDPPort);
+    BindTCP();
+    BindUDP();
 }
 
-void NetworkManager::BindTCP (const char* address, unsigned short port)
+void NetworkManager::BindTCP ()
 {
-    sf::Socket::Status status = tcp.connect(address, port);
+    sf::Socket::Status status = tcp.connect(serverAddress, TCPPort);
     if (status != sf::Socket::Done)
     {
         Debug::Log("Could not connect TCP socket", Debug::Error);
@@ -30,9 +29,9 @@ void NetworkManager::BindTCP (const char* address, unsigned short port)
     }
 }
 
-void NetworkManager::BindUDP(unsigned short port)
+void NetworkManager::BindUDP()
 {
-    sf::Socket::Status status = udp.bind(port);
+    sf::Socket::Status status = udp.bind(UDPPort);
     if (status != sf::Socket::Done)
     {
         Debug::Log("Could not bind UDP socket \nThis means that something has gone badly wrong.", Debug::Error);
@@ -46,10 +45,8 @@ void NetworkManager::BindUDP(unsigned short port)
 void NetworkManager::SendTCP(char message[64])
 {
     sf::Packet packet;
-
     packet.append(message, 64);
     tcp.send(packet);
-    packet.clear();
 }
 
 void NetworkManager::SendUDP(char message[64])
@@ -57,5 +54,16 @@ void NetworkManager::SendUDP(char message[64])
     sf::Packet packet;
     packet.append(message, 64);
     udp.send(packet, serverAddress, UDPPort);
-    packet.clear();
+}
+
+void NetworkManager::ReceiveTCP()
+{
+    sf::Packet packet;
+    tcp.receive(packet);
+}
+
+void NetworkManager::ReceiveUDP()
+{
+    sf::Packet packet;
+    udp.receive(packet, serverAddress, UDPPort);
 }

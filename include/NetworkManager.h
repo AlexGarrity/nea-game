@@ -15,8 +15,10 @@ public:
 
     static void InitialiseSockets(const char* address, unsigned short tPort, unsigned short uPort);
 
-    static void BindTCP(const char* address, unsigned short port);
-    static void BindUDP(unsigned short port);
+    static void BindTCP();
+    static void BindUDP();
+
+
 
 protected:
 
@@ -24,7 +26,7 @@ private:
     static sf::TcpSocket tcp;
     static sf::UdpSocket udp;
 
-    static const char* serverAddress;
+    static sf::IpAddress serverAddress;
     static unsigned short UDPPort;
     static unsigned short TCPPort;
 };

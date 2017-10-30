@@ -10,6 +10,9 @@ class ObjectManager
 public:
     static void UpdateObjects();
 
+    static void CreateObject(GameObject* object);
+    static void RemoveObject(unsigned int index);
+
 protected:
 
 private:

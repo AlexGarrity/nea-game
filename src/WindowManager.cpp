@@ -14,7 +14,14 @@ void WindowManager::Display()
 
 void WindowManager::SetFramerate(unsigned int framerate)
 {
-    window.setFramerateLimit(framerate);
+    if (framerate != 0)
+    {
+        window.setFramerateLimit(framerate);
+    }
+    else
+    {
+        window.setVerticalSyncEnabled(true);
+    }
 }
 
 void WindowManager::CreateWindow(short x, short y, short depth, const char name[])

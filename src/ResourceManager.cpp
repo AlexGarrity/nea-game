@@ -12,5 +12,4 @@ void ResourceManager::LoadImage(const char* fileName)
 void ResourceManager::LoadManifest(const char* fileName)
 {
 
-
 }
