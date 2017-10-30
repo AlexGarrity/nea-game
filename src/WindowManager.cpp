@@ -14,12 +14,9 @@ void WindowManager::Display()
 
 void WindowManager::SetFramerate(unsigned int framerate)
 {
-    if (framerate != 0)
-    {
+    if (framerate != 0) {
         window.setFramerateLimit(framerate);
-    }
-    else
-    {
+    } else {
         window.setVerticalSyncEnabled(true);
     }
 }
@@ -32,10 +29,8 @@ void WindowManager::CreateWindow(short x, short y, short depth, const char name[
 void WindowManager::CheckEvents()
 {
     sf::Event event;
-    while (window.pollEvent(event))
-    {
-        if (event.type == sf::Event::Closed)
-        {
+    while (window.pollEvent(event)) {
+        if (event.type == sf::Event::Closed) {
             window.close();
         }
     }

@@ -14,8 +14,7 @@ void Engine::Start(short x, short y, short depth, const char name[])
 
 void Engine::GameLoop()
 {
-    while (WindowManager::WindowIsOpen())
-    {
+    while (WindowManager::WindowIsOpen()) {
         WindowManager::Clear();
         WindowManager::CheckEvents();
         StateManager::Update();

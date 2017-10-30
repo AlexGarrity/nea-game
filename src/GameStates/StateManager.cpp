@@ -9,8 +9,7 @@ void StateManager::PushState(GameState* state)
 
 void StateManager::Update()
 {
-    if (!stateList.empty())
-    {
+    if (!stateList.empty()) {
         GameState* state = PopState();
         state->Input();
         state->Update();

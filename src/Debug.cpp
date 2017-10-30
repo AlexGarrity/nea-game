@@ -3,8 +3,7 @@
 void Debug::Log(std::string message, type errorType)
 {
     std::string prefix;
-    switch (errorType)
-    {
+    switch (errorType) {
     case Trace:
         prefix = "Trace";
         break;

@@ -1,22 +1,21 @@
 #include "ObjectManager.h"
 
-std::vector<GameObject*> ObjectManager::objectList;
+std::map<char[4], GameObject*> ObjectManager::objectList;
 
 void ObjectManager::UpdateObjects()
 {
-    for (unsigned int i = 0; i < objectList.size(); i++)
-    {
-        //I'm a real programmer now.  I used a pointer...
-        WindowManager::Draw(objectList[i]->GetSprite());
+    std::map<char[4], GameObject*>::iterator x;
+    for (x = objectList.begin(); x!= objectList.end(); x++) {
+        WindowManager::Draw(x->GetSprite());
     }
 }
 
-void ObjectManager::CreateObject(GameObject* object)
+void ObjectManager::CreateObject(GameObject* object, char id[4])
 {
-    objectList.push_back(object);
+    objectList[id] = object;
 }
 
-void ObjectManager::RemoveObject(unsigned int index)
+void ObjectManager::RemoveObject(char id[4])
 {
-    objectList.erase(objectList.begin() + (index - 1));
+    objectList.erase(id);
 }

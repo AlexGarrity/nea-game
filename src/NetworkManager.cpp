@@ -19,12 +19,9 @@ void NetworkManager::InitialiseSockets(const char* address, unsigned short tPort
 void NetworkManager::BindTCP ()
 {
     sf::Socket::Status status = tcp.connect(serverAddress, TCPPort);
-    if (status != sf::Socket::Done)
-    {
+    if (status != sf::Socket::Done) {
         Debug::Log("Could not connect TCP socket", Debug::Error);
-    }
-    else
-    {
+    } else {
         Debug::Log("Connected successfully", Debug::Info);
     }
 }
@@ -32,12 +29,9 @@ void NetworkManager::BindTCP ()
 void NetworkManager::BindUDP()
 {
     sf::Socket::Status status = udp.bind(UDPPort);
-    if (status != sf::Socket::Done)
-    {
+    if (status != sf::Socket::Done) {
         Debug::Log("Could not bind UDP socket \nThis means that something has gone badly wrong.", Debug::Error);
-    }
-    else
-    {
+    } else {
         Debug::Log("Bound UDP port successfully", Debug::Info);
     }
 }
