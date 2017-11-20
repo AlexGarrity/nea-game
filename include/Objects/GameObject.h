@@ -8,12 +8,19 @@
 class GameObject
 {
 public:
-    /** Default constructor */
-    GameObject();
-    /** Default destructor */
+    /** Constructor -
+        In accordance with the RIAA (Resoure Acquisition is Initialisation) idiom, textures are acquired at this point
+        This also sets the object's position in 2D space, and assigns the two properties to the sprite
+    **/
+    GameObject(sf::Texture texture, float xPos, float yPos);
+
+    /** Destructor -
+        Not a lot happens here.
+    **/
     virtual ~GameObject();
 
     sf::Sprite& GetSprite();
+    virtual void Update() =0;
 
 protected:
 

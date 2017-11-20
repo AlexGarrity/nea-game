@@ -1,21 +1,27 @@
 #include "ObjectManager.h"
 
-std::map<char[4], GameObject*> ObjectManager::objectList;
+// Forward declared as private static within a class
+std::map<std::string, GameObject*> ObjectManager::objectList;
 
+// Iterates through all objects in the map and calls the update method
+// After an object is updated, it's drawn
 void ObjectManager::UpdateObjects()
 {
-    std::map<char[4], GameObject*>::iterator x;
-    for (x = objectList.begin(); x!= objectList.end(); x++) {
-        WindowManager::Draw(x->GetSprite());
+    for (std::map<std::string, GameObject*>::iterator x = objectList.begin(); x != objectList.end(); ++x) {
+        x->second->Update();
+        WindowManager::Draw(x->second->GetSprite());
     }
 }
 
-void ObjectManager::CreateObject(GameObject* object, char id[4])
+// Adds an object to the map at the specified position
+void ObjectManager::AddObject(GameObject* object, std::string id)
 {
-    objectList[id] = object;
+    objectList.insert(std::make_pair(id, object));
+    // Has some stupid error because it doesn't like the pair...
 }
 
-void ObjectManager::RemoveObject(char id[4])
+// Removes the object with the specified id from the list, hence deleting it
+void ObjectManager::RemoveObject(std::string id)
 {
     objectList.erase(id);
 }

@@ -4,6 +4,8 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 
+/** Entire class is static since basically everything accesses this is some way or another **/
+
 class WindowManager
 {
 public:

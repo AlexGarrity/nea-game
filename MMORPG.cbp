@@ -12,9 +12,7 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-std=c++11" />
 					<Add option="-g" />
-					<Add directory="include/GameStates" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network-d" />
@@ -30,8 +28,7 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-O2" />
-					<Add directory="include/GameStates" />
+					<Add option="-O4" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -48,9 +45,7 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-O2" />
-					<Add option="-std=c++11" />
-					<Add directory="include/GameStates" />
+					<Add option="-O4" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />

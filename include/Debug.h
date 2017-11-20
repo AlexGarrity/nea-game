@@ -4,6 +4,11 @@
 #include <iostream>
 #include <string>
 
+/*
+Using this as a log level guide:
+https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+Not flawless, but the first and third most voted-for answers are good
+*/
 
 class Debug
 {

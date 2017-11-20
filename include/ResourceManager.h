@@ -1,20 +1,21 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
-#include <fstream>
 #include <map>
-#include <SFML/Graphics/Image.hpp>
+#include <memory>
+
+#include <SFML/Graphics/Texture.hpp>
 
 class ResourceManager
 {
 public:
-    static void LoadImage(const char* fileName);
-    static void LoadManifest(const char* filePath);
+    static void Load(const char* filePath, const char* texName);
+    static sf::Texture &Get(const char* texName);
 
 protected:
 
 private:
-    static std::map<const char*, sf::Image> imageMap;
+    static std::map<const char*, std::unique_ptr<sf::Texture>> textureMap;
 };
 
 #endif // RESOURCEMANAGER_H
