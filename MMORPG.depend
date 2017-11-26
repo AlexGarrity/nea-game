@@ -367,7 +367,7 @@
 1508146722 source:c:\users\alex\documents\code\mmorpg\src\networkmanager.cpp
 	"NetworkManager.h"
 
-1511181188 source:/home/alex/Documents/MMORPG/Game/main.cpp
+1511181477 source:/home/alex/Documents/MMORPG/Game/main.cpp
 	"Engine.h"
 
 1511180776 /home/alex/Documents/MMORPG/Game/include/Engine.h
@@ -521,14 +521,14 @@
 
 1508406737 /home/alex/Documents/MMORPG/SFML-2.4.2/include/SFML/System/String.inl
 
-1511181351 /home/alex/Documents/MMORPG/Game/include/ObjectManager.h
+1511257814 /home/alex/Documents/MMORPG/Game/include/ObjectManager.h
 	<map>
 	<string>
 	"WindowManager.h"
 	"GameObject.h"
 	"ResourceManager.h"
 
-1511181218 /home/alex/Documents/MMORPG/Game/include/Objects/GameObject.h
+1511613215 /home/alex/Documents/MMORPG/Game/include/Objects/GameObject.h
 	<SFML/Graphics/Sprite.hpp>
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Texture.hpp>
@@ -724,7 +724,7 @@
 1509388836 source:/home/alex/Documents/MMORPG/Game/src/Debug.cpp
 	"Debug.h"
 
-1511181412 source:/home/alex/Documents/MMORPG/Game/src/Engine.cpp
+1511611576 source:/home/alex/Documents/MMORPG/Game/src/Engine.cpp
 	"Engine.h"
 
 1508766974 source:/home/alex/Documents/MMORPG/Game/src/GameStates/GameState.cpp
@@ -736,10 +736,10 @@
 1509388836 source:/home/alex/Documents/MMORPG/Game/src/NetworkManager.cpp
 	"NetworkManager.h"
 
-1511181375 source:/home/alex/Documents/MMORPG/Game/src/ObjectManager.cpp
+1511348218 source:/home/alex/Documents/MMORPG/Game/src/ObjectManager.cpp
 	"ObjectManager.h"
 
-1511102617 source:/home/alex/Documents/MMORPG/Game/src/Objects/GameObject.cpp
+1511613216 source:/home/alex/Documents/MMORPG/Game/src/Objects/GameObject.cpp
 	"GameObject.h"
 
 1511181045 source:/home/alex/Documents/MMORPG/Game/src/WindowManager.cpp
@@ -812,4 +812,25 @@
 
 1509967179 /home/alex/Documents/MMORPG/Game/include/GameStates/GS_Login.h
 	"GameState.h"
+
+1511611576 source:/home/alex/Documents/MMORPG/Game/src/AI/AIPackage.cpp
+	"AIPackage.h"
+
+1511611576 /home/alex/Documents/MMORPG/Game/include/AI/AIPackage.h
+	"Entity.h"
+	"Maths.h"
+	<queue>
+
+1511611576 /home/alex/Documents/MMORPG/Game/include/Objects/Entity.h
+	"GameObject.h"
+
+1511611576 source:/home/alex/Documents/MMORPG/Game/src/Utilities/Maths.cpp
+	"Maths.h"
+
+1511611576 /home/alex/Documents/MMORPG/Game/include/Utilities/Maths.h
+	<cmath>
+	"SFML/System/Vector2.hpp"
+
+1511613224 source:/home/alex/Documents/MMORPG/Game/src/Objects/Entity.cpp
+	"Entity.h"
 

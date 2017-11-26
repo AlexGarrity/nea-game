@@ -13,6 +13,7 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include/Utilities" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network-d" />
@@ -29,6 +30,7 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-O4" />
+					<Add directory="include/Utilities" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -46,6 +48,7 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-O4" />
+					<Add directory="include/Utilities" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -67,10 +70,12 @@
 			<Add directory="include/GameStates" />
 			<Add directory="include/Utilities" />
 			<Add directory="include/UI" />
+			<Add directory="include/AI" />
 		</Compiler>
 		<Linker>
 			<Add directory="../SFML-2.4.2/lib" />
 		</Linker>
+		<Unit filename="include/AI/AIPackage.h" />
 		<Unit filename="include/Debug.h" />
 		<Unit filename="include/Engine.h" />
 		<Unit filename="include/GameStates/GS_Login.h" />
@@ -78,13 +83,16 @@
 		<Unit filename="include/GameStates/StateManager.h" />
 		<Unit filename="include/NetworkManager.h" />
 		<Unit filename="include/ObjectManager.h" />
+		<Unit filename="include/Objects/Entity.h" />
 		<Unit filename="include/Objects/GameObject.h" />
 		<Unit filename="include/ResourceManager.h" />
 		<Unit filename="include/UI/UIElement.h" />
 		<Unit filename="include/UI/UIManager.h" />
+		<Unit filename="include/Utilities/Maths.h" />
 		<Unit filename="include/Utilities/XMLParser.h" />
 		<Unit filename="include/WindowManager.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AI/AIPackage.cpp" />
 		<Unit filename="src/Debug.cpp" />
 		<Unit filename="src/Engine.cpp" />
 		<Unit filename="src/GameStates/GS_Login.cpp" />
@@ -92,10 +100,12 @@
 		<Unit filename="src/GameStates/StateManager.cpp" />
 		<Unit filename="src/NetworkManager.cpp" />
 		<Unit filename="src/ObjectManager.cpp" />
+		<Unit filename="src/Objects/Entity.cpp" />
 		<Unit filename="src/Objects/GameObject.cpp" />
 		<Unit filename="src/ResourceManager.cpp" />
 		<Unit filename="src/UI/UIElement.cpp" />
 		<Unit filename="src/UI/UIManager.cpp" />
+		<Unit filename="src/Utilities/Maths.cpp" />
 		<Unit filename="src/Utilities/XMLParser.cpp" />
 		<Unit filename="src/WindowManager.cpp" />
 		<Extensions>

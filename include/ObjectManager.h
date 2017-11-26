@@ -17,6 +17,7 @@ class ObjectManager
 public:
     static void UpdateObjects();
 
+    static void CreateObject(std::string textureName, float x, float y);
     static void AddObject(GameObject* object, std::string id);
     static void RemoveObject(std::string);
 

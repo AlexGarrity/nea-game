@@ -2,7 +2,8 @@
 
 // Constructor that I'm not using for some reason...
 
-Engine::Engine() {
+Engine::Engine()
+{
 
 }
 

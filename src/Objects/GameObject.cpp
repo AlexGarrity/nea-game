@@ -1,19 +1,32 @@
 #include "GameObject.h"
 
-GameObject::GameObject(sf::Texture tex, float xPos, float yPos)
+GameObject::GameObject()
 {
-    texture = tex;
-    position = sf::Vector2f(xPos, yPos);
-    sprite.setPosition(position);
-    sprite.setTexture(texture);
+
 }
 
 GameObject::~GameObject()
 {
-    //dtor
+    //
 }
 
 sf::Sprite& GameObject::GetSprite()
 {
     return sprite;
+}
+
+sf::Vector2f GameObject::GetPosition()
+{
+    return position;
+}
+
+void GameObject::SetPosition(float x, float y)
+{
+    position.x = x;
+    position.y = y;
+}
+
+void GameObject::SetPosition(sf::Vector2f pos)
+{
+    position = pos;
 }

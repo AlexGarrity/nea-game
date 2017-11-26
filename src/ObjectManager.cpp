@@ -13,6 +13,11 @@ void ObjectManager::UpdateObjects()
     }
 }
 
+void ObjectManager::CreateObject(std::string textureName, float x, float y)
+{
+    // AddObject();     Put ref to object created as argument
+}
+
 // Adds an object to the map at the specified position
 void ObjectManager::AddObject(GameObject* object, std::string id)
 {
