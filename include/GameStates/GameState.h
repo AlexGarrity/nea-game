@@ -1,4 +1,4 @@
-/**     Alex Garrity, 2017      **/
+/**     Alex Garrity, 2018      **/
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H

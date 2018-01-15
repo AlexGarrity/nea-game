@@ -1,4 +1,4 @@
-/**     Alex Garrity, 2017      **/
+/**     Alex Garrity, 2018      **/
 
 #ifndef CRYPTO_H
 #define CRYPTO_H

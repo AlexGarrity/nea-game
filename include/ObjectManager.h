@@ -1,4 +1,4 @@
-/**     Alex Garrity, 2017      **/
+/**     Alex Garrity, 2018      **/
 
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H

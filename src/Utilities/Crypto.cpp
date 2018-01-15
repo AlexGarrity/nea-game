@@ -1,3 +1,3 @@
-/**     Alex Garrity, 2017      **/
+/**     Alex Garrity, 2018      **/
 
 #include "Crypto.h"
