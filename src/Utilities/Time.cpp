@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "Time.h"
 
 sf::Clock Time::clock;

@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 

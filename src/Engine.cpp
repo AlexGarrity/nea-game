@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "Engine.h"
 
 // Constructor that I deleted was here.

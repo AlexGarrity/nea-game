@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 

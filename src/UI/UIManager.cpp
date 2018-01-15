@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "UIManager.h"
 
 std::vector<UIElement*> UIManager::UIelements;

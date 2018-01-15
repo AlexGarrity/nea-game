@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "NetworkManager.h"
 
 sf::TcpSocket NetworkManager::tcpSocket;            //Forward declare both sockets used

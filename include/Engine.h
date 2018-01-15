@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef ENGINE_H
 #define ENGINE_H
 

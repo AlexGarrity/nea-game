@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef UIMANAGER_H
 #define UIMANAGER_H
 

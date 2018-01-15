@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef GS_GAMEPLAY_H
 #define GS_GAMEPLAY_H
 

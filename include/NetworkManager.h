@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef NETWORKMANAGER_H
 #define NETWORKMANAGER_H
 

@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 

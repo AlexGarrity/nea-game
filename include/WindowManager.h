@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef WINDOWMANAGER_H
 #define WINDOWMANAGER_H
 

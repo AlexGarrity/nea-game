@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef ENTITY_H
 #define ENTITY_H
 

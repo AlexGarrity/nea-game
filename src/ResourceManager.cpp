@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "ResourceManager.h"
 
 std::map<const char*, std::unique_ptr<sf::Texture>> ResourceManager::textureMap;

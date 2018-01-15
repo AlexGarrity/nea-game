@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "Debug.h"
 
 void Debug::Log(std::string message, type errorType)

@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "WindowManager.h"
 
 // Redeclare the render window as it's private static within a class

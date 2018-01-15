@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "StateManager.h"
 
 std::stack<GameState*> StateManager::stateList;

@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef SETTINGS_H_INCLUDED
 #define SETTINGS_H_INCLUDED
 

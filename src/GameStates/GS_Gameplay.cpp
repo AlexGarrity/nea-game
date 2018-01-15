@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "GS_Gameplay.h"
 
 void GS_Gameplay::Input()

@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef DEBUG_H
 #define DEBUG_H
 

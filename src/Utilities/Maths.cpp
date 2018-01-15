@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "Maths.h"
 
 // Only returns squared magnitude as there's no point rooting it

@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef GS_LOGIN_H
 #define GS_LOGIN_H
 

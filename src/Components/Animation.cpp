@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #include "Animation.h"
 
 Animation::Animation(sf::Sprite &entitySprite)

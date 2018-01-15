@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef UIELEMENT_H
 #define UIELEMENT_H
 

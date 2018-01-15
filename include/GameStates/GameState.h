@@ -1,3 +1,5 @@
+/**     Alex Garrity, 2017      **/
+
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
