@@ -1,17 +1,7 @@
 #include "Engine.h"
 
-// Constructor that I'm not using for some reason...
+// Constructor that I deleted was here.
 
-Engine::Engine()
-{
-
-}
-
-/**
-    Start -
-        Not particularly sure why I used this as opposed to a constructor
-        I might make the engine static later.  Or turn this into a singleton.
-**/
 
 bool Engine::Start(short x, short y, short depth, const char name[])
 {
@@ -27,11 +17,26 @@ bool Engine::Start(short x, short y, short depth, const char name[])
     return true;
 }
 
+void Engine::GraphicsUpdate()
+{
+    ObjectManager::DrawObjects();
+    UIManager::Update();
+    WindowManager::Clear();
+    WindowManager::Display();
+}
+
+void Engine::NetworkUpdate()
+{
+    NetworkManager::Update();
+    ObjectManager::UpdateObjects();
+}
+
 /**
     Game Loop -
         Checks if the window is open
         If it is:
             Check that the user hasn't tried to close the window, and that it's still in focus
+            Update the frame time
             Update the state manager
             Clear the window
             Display objects drawn to the window
@@ -42,6 +47,7 @@ bool Engine::Start(short x, short y, short depth, const char name[])
 void Engine::GameLoop()
 {
     while (WindowManager::WindowIsOpen()) {
+        Time::Update();
         WindowManager::CheckEvents();
         StateManager::Update();
         WindowManager::Clear();
@@ -53,16 +59,23 @@ void Engine::GameLoop()
     This version of the game loop is purely for test purposes.
     When something new gets implemented, it gets tested here first.
     This is NOT the actual game loop.
+        > This might yet turn into the actual gameloop...
     It's also a total mess...
 **/
+
 void Engine::TestLoop()
 {
     ResourceManager::Load("assets/texture.png", "texture");
-    //ObjectManager::CreateObject();    Currently disabled as only have GameObject type for now.
+    //ObjectManager::CreateObject("texture", 50, 50);
+
+    //std::thread graphicsThread(Engine::GraphicsUpdate);           // Drawing and updating objects may be done on a separate thread
+    std::thread networkThread(&Engine::NetworkUpdate, this);      // Sending and receiving data to and from the server is done in a separate thread
+
     while (WindowManager::WindowIsOpen()) {
         WindowManager::CheckEvents();
-        ObjectManager::UpdateObjects();
-        WindowManager::Clear();
-        WindowManager::Display();
+        GraphicsUpdate();       //Updating graphics is on the main thread for now
     }
+    //graphicsThread.join();
+    networkThread.detach();     //Detach here as opposed to join as otherwise the network would have to wait for the next update
+    NetworkManager::EndConnection();    //Tell the server that the connection has been closed, and free up the ports
 }

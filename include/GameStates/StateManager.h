@@ -2,10 +2,11 @@
 #define STATEMANAGER_H
 
 #include "GameState.h"
+#include "ObjectManager.h"
+#include "UIManager.h"
 #include <stack>
 
-class StateManager
-{
+class StateManager {
 public:
     static void Update();
     static void PushState(GameState* state);

@@ -2,8 +2,7 @@
 #define GAMESTATE_H
 
 
-class GameState
-{
+class GameState {
 public:
     virtual void Input() =0;
     virtual void Update() =0;

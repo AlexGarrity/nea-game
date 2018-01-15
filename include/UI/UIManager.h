@@ -7,13 +7,13 @@
 #include "UIElement.h"
 
 
-class UIManager
-{
+class UIManager {
 public:
     static void Update();
 protected:
 private:
     static std::vector<UIElement*> UIelements;
+    static sf::View UIView;
 };
 
 #endif // UIMANAGER_H

@@ -1,28 +1,25 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include <SFML/Graphics/Sprite.hpp>
-#include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
-class GameObject
-{
+/**
+    A GameObject is something that exists in game, with a sprite and position on screen.
+    It doesn't necessarily have AI processing or advanced features, it could be a building
+    or a chicken prop
+**/
+
+class GameObject {
 public:
     GameObject();
     virtual ~GameObject();
 
-    virtual sf::Sprite& GetSprite();
-    virtual void Update() =0;
-
-    virtual sf::Vector2f GetPosition();
-    virtual void SetPosition(float x, float y);
-    virtual void SetPosition(sf::Vector2f pos);
-
 protected:
-    sf::Sprite sprite;
-    sf::Texture texture;
     sf::Vector2f position;
-
+    sf::Texture texture;
+    sf::Sprite sprite;
 private:
 
 };

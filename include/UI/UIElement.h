@@ -6,8 +6,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp>
 
-class UIElement
-{
+class UIElement {
 public:
     UIElement();
     void Update();

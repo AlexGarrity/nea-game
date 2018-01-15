@@ -1,0 +1,14 @@
+<ResourceManifest>
+    <Resource>
+        <Type>manifest</Type>
+        <Filepath>assets/textures/manifest.xml</Filepath>
+    </Resource>
+    <Resource>
+        <Type>manifest</Type>
+        <Filepath>assets/audio/manifest.xml</Filepath>
+    </Resource>
+    <Resource>
+        <Type>manifest</Type>
+        <Filepath>assets/world/manifest.xml</Filepath>
+    </Resource>
+</ResourceManifest>

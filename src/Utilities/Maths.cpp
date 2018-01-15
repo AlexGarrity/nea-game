@@ -1,41 +1,50 @@
 #include "Maths.h"
 
+// Only returns squared magnitude as there's no point rooting it
 float Maths::Pythagoras(float deltaX, float deltaY)
 {
-    float x2;
-    x2 = pow(deltaX, 2);
+    //Return the sum of deltaX squared and deltaY squared
+    return pow(deltaX, 2) + pow(deltaY, 2);
 }
 
 float Maths::Pythagoras(sf::Vector2f o, sf::Vector2f t)
 {
+    //Calculate deltaX and deltaY by subtracting the target from the desination
     float deltaX = Absolute(t.x - o.x);
     float deltaY = Absolute(t.y - o.y);
-    return sqrt(pow(deltaX, 2) + pow(deltaY, 2));
+    //Return the sum of deltaX squared and deltaY squared
+    return pow(deltaX, 2) + pow(deltaY, 2);
 }
-/*
-float Maths::Pythagoras(float deltaX, float deltaY) {
-    return sqrt(pow(deltaX, 2) + pow(deltaY, 2));
-}
-*/
-float Maths::Pythagoras(float xA, float yA, float xB, float yB)
+
+template <class T>
+T Maths::Pythagoras(T xA, T yA, T xB, T yB)
 {
-    float deltaX = Absolute(xB - xA);
-    float deltaY = Absolute(yB - yA);
-    return sqrt(pow(deltaX, 2) + pow(deltaY, 2));
+    //Calculate deltaX and deltaY by subtracting coordinate B from A
+    T deltaX = Absolute(xB - xA);
+    T deltaY = Absolute(yB - yA);
+    //Return the sum of deltaX squared and deltaY squared
+    return pow(deltaX, 2) + pow(deltaY, 2);
 }
 
 float Maths::Absolute(float x)
 {
+    //If the given value is less than 0
     if (x < 0) {
+        //Return the value multiplied by -1
         return x * -1;
     }
+    //If that's not true, return the actual value
     return x;
 }
 
 int Maths::Absolute(int x)
 {
+    //If the given value is less than 0
     if (x < 0) {
+        //Return the value multiplied by -1
         return x * -1;
     }
+    //If that's not true, return the actual value
     return x;
 }
+

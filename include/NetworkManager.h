@@ -1,34 +1,53 @@
 #ifndef NETWORKMANAGER_H
 #define NETWORKMANAGER_H
 
+#include <queue>
+#include <string>
+
 #include <SFML/Network.hpp>
+
 #include "Debug.h"
-#include <cstdio>
+#include "Settings.h"
 
-class NetworkManager
-{
+struct NetworkInstruction {
 public:
-    static void SendUDP(char message[64]);
-    static void SendTCP(char message[64]);
-    static void ReceiveUDP();
-    static void ReceiveTCP();
+    std::string type;
+    std::string subject;
+    std::string details;
+    NetworkInstruction (std::string t, std::string s, std::string d)
+    {
+        type = t;
+        subject = s;
+        details = d;
+    }
+};
 
-    static void InitialiseSockets(const char* address, unsigned short tPort, unsigned short uPort);
+class NetworkManager {
+public:
+    static void InitialiseSockets(std::string ipAddress, unsigned short tcpPort, unsigned short udpPort);
+    static void Update();
+    static void EndConnection();
+    static void Login(std::string username, std::string password);
 
-    static void BindTCP();
-    static void BindUDP();
-
-
+    static std::queue <NetworkInstruction> updateQueueDown;
+    static std::queue <NetworkInstruction> updateQueueUp;
 
 protected:
 
 private:
-    static sf::TcpSocket tcp;
-    static sf::UdpSocket udp;
+    static void GetUpdates();
+    static void ProcessUpdates();
+    static void PushUpdates();
+    static void ClearQueues();
+    static void ChangeServer();
 
-    static sf::IpAddress serverAddress;
-    static unsigned short UDPPort;
-    static unsigned short TCPPort;
+    static sf::TcpSocket tcpSocket;
+    static sf::UdpSocket udpSocket;
+
+    static sf::Packet tcpDownPacket;
+    static sf::Packet udpDownPacket;
+    static sf::Packet tcpUpPacket;
+    static sf::Packet udpUpPacket;
 };
 
 #endif // NETWORKMANAGER_H

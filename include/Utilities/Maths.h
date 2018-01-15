@@ -1,20 +1,23 @@
 #ifndef MATHS_H
 #define MATHS_H
 
-/** Custom maths utility class **/
 #include <cmath>
-
 #include "SFML/System/Vector2.hpp"
 
-class Maths
-{
-public:
-    static float Pythagoras(float xA, float yA, float xB, float yB);     //Pythagoras given four points
-    static float Pythagoras(float deltaX, float deltaY);    //Pythagoras for pre-computer deltaX and deltaY
-    static float Pythagoras(sf::Vector2f origin, sf::Vector2f target);
+/**
+    Extension of the cmath library with some higher level features like
+    pythagoras and...
+**/
 
-    static float Absolute (float x);
-    static int Absolute (int x);
+class Maths {
+public:
+    template <class T>
+    static T Pythagoras(T xA, T yA, T xB, T yB);        //Pythagoras two sets of coordinates
+    static float Pythagoras(float deltaX, float deltaY);                    //Pythagoras for pre-computer deltaX and deltaY
+    static float Pythagoras(sf::Vector2f origin, sf::Vector2f target);      //Pythagoras for two vector sets of coordinates
+
+    static float Absolute (float x);        //Absolute functions returns magnitude of value
+    static int Absolute (int x);            //Above, but for integers rather than floats
 
 protected:
 private:

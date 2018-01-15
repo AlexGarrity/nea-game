@@ -20,8 +20,8 @@ void Debug::Log(std::string message, type errorType)
         prefix = "Error";
         break;
     case Fatal:
-        std::cout << "A fatal error has occured: " << message << "The application will now terminate." << std::endl;
-        return;
+        std::cout << "A fatal error has occured: " << message << std::endl << "The application will now terminate." << std::endl;
+        exit(EXIT_FAILURE);
         break;
     }
     std::cout << prefix << ": " << message << std::endl;

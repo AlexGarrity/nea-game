@@ -2,27 +2,24 @@
 #define ENTITY_H
 
 #include "GameObject.h"
+#include "Animator.h"
 
-class Entity : public GameObject
-{
+/**
+    Entity describes an object that is 'living' which will be
+    updated by the server and be 'alive' (as opposed to something like
+    a barrel which is stationary and will always be in its set position)
+**/
+
+
+class Entity : public GameObject {
 public:
-    Entity(sf::Texture texture, float xPos, float yPos, float health, float range, float speed);
-    virtual ~Entity();
+    Entity();
+    ~Entity();
 
-    virtual void Update();
-
-    virtual float GetHealth();
-    virtual float GetSpeed();
-    virtual float GetRange();
-
-    virtual void SetHealth(float h);
-    virtual void SetSpeed(float s);
-    virtual void SetRange(float r);
-
+    void Translate(float deltaX, float deltaY);
 protected:
     float health;
-    float speed;
-    float range;
+    float movementSpeed;
 
 private:
 };

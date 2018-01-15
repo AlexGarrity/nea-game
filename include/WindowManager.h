@@ -6,8 +6,7 @@
 
 /** Entire class is static since basically everything accesses this is some way or another **/
 
-class WindowManager
-{
+class WindowManager {
 public:
     static void Clear();
     static void Display();
