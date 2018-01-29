@@ -10,10 +10,12 @@ bool Engine::Start(short x, short y, short depth, const char name[])
     WindowManager::CreateWindow(x, y, depth, name);
     WindowManager::SetFramerate(0);
     NetworkManager::InitialiseSockets("127.0.0.1", 6401, 6402);
+    ObjectManager::CreateObject(new Entity(), "0000000000000001");
     if (WindowManager::WindowIsOpen()) {
         /** TODO:  Change this to GameLoop() once the state manager works **/
         TestLoop();
-    } else {
+    }
+    else {
         return false;
     }
     return true;

@@ -13,10 +13,10 @@
 
 struct NetworkInstruction {
 public:
-    std::string type;
+    unsigned char type;
     std::string subject;
     std::string details;
-    NetworkInstruction (std::string t, std::string s, std::string d)
+    NetworkInstruction (unsigned char t, std::string s, std::string d)
     {
         type = t;
         subject = s;

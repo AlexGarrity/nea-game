@@ -3,6 +3,9 @@
 #ifndef ANIMATOR_H
 #define ANIMATOR_H
 
+#include <string>
+#include <map>
+
 /**
     The animator handles playing animations for one agent.
     This includes tracking running time, and being given animations

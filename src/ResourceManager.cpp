@@ -22,17 +22,23 @@ sf::Texture& ResourceManager::Get(const char* texName)
     return *tex->second;
 }
 
+GameObject* ResourceManager::GetEntity(std::string n) {
+    auto obj = objectMap.find(n);
+    return *obj->second;
+}
+
 void ResourceManager::LoadManifest(const char* filePath)
 {
     std::ifstream fileReader (filePath, std::ifstream::in);
 
 
     while (fileReader.good()) {
-        std::string currentLine = fileReader.getline();
+        std::string currentLine;
+        std::getline(fileReader, currentLine);
 
         //If the line is worth reading...
         if (currentLine.size() > 3) {
-            XMLTypes currentTag = GetTag();
+            XMLTypes currentTag = GetTag(currentLine);
 
         }
     }
@@ -40,7 +46,7 @@ void ResourceManager::LoadManifest(const char* filePath)
 }
 
 
-XMLTypes ResourceManager::GetTag()
+XMLTypes ResourceManager::GetTag(std::string currentLine)
 {
     unsigned short startMarker;
     unsigned short endMarker;
@@ -52,11 +58,12 @@ XMLTypes ResourceManager::GetTag()
             endMarker = i - 1;
         break;      //Prematurely end because the tag has been found
     }
-    std::string markerText = substr(startMarker, endMarker - startMarker);
+    std::string markerText = currentLine.substr(startMarker, endMarker - startMarker);
     if (markerText == "Type") {
         return Type;
-    } else if (markerText == "Filepath") {
-        return Filepath;
+    }
+    else if (markerText == "Filepath") {
+        return FilePath;
     }
     return Invalid;
 }

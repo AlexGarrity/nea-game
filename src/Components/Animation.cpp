@@ -16,7 +16,7 @@ Animation::~Animation()
 void Animation::Update()
 {
     elapsedTime += Time::deltaTime;
-    const sf::Vector2i sheetSize = sprite->getTexture()->getSize();
+    sf::Vector2i sheetSize; // = sprite->getTexture()->getSize();
     sf::IntRect textureRect = sprite->getTextureRect();
 
     if (currentFrame == 0) {

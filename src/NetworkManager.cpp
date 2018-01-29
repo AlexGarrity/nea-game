@@ -15,7 +15,7 @@ unsigned short Settings::loginTCPPort;
 sf::Packet NetworkManager::tcpDownPacket;       //Forward declare packets
 sf::Packet NetworkManager::tcpUpPacket;         //      TCP is used by the login server
 sf::Packet NetworkManager::udpDownPacket;       //      UDP is used by the game
-sf::Packet NetworkManager::udpUpPacket;         //Format for sending messages should be type, subject, details.
+sf::Packet NetworkManager::udpUpPacket;         //Format for sending messages should be type (char), subject (string), details (string).
 /*Type is the type of message.  For example; Conn, Move...
   Subject is what's being affected, represented by a UUID or some other detail
   Detail is what's actually changing or being set
@@ -29,20 +29,23 @@ void NetworkManager::InitialiseSockets(std::string ipAddress, unsigned short tcp
 {
     if (tcpSocket.connect(ipAddress, tcpPort) != sf::TcpSocket::Done) {
         Debug::Log("TCP socket connected successfully", Debug::Trace);
-    } else {
+    }
+    else {
         Debug::Log("TCP socket failed to connect.  Is the server online?", Debug::Warn);
     }
     if (udpSocket.bind(udpPort) != sf::UdpSocket::Done) {
         Debug::Log("UDP socket bound successfully", Debug::Trace);
-    } else {
+    }
+    else {
         Debug::Log("UDP socket failed to bind to port", Debug::Warn);
     }
 }
 
+
 void NetworkManager::EndConnection()
 {
 
-    std::string type = "DCon";              //The message type is a disconnect (shortened to DCon to save on Bandwidth)
+    unsigned char type = 2;                          //The message type is a disconnect (Type 2)
     std::string subject = Settings::UUID;   //The subject of the disconnect is the user
     std::string details = "";               //Added for consistency
     bool canDisconnectSafely = false;       //Check used later in a loop
@@ -54,70 +57,91 @@ void NetworkManager::EndConnection()
     tcpSocket.send(tcpUpPacket);                        //Send the packet to the server
     Debug::Log("Sent disconnect signal", Debug::Info);  //Log that this has happened
 
-    while (!canDisconnectSafely)                            //While the client can't disconnect safely...
+    while (!canDisconnectSafely) {                            //While the client can't disconnect safely...
         if (tcpSocket.receive(tcpDownPacket)) {                 //Receive a packet through the TCP socket, and load it into the TCP downwards packet
             tcpDownPacket >> type >> subject >> details;        //Take the packet contents and put them into type and subject
-            if (type == "Cnfm") {                               //If the type of message received is a confirmation...
-                if (subject == "DCon") {                        //If the server is confirming a disconnection...
+            if (type == 3) {                                    //If the type of message received is a confirmation...
+                if (subject == Settings::UUID)                  //If the server is confirming a disconnection...
                     if (details == "True") {                    //Checks for package
                         canDisconnectSafely = true;             //Set canDisconnectSafely to true
                     }
                 }
             }
+
         }
-    Debug::Log ("The client has safely disconnected", Debug::Info);     //Log that the client has disconnected safely
-}
+            Debug::Log ("The client has safely disconnected", Debug::Info);     //Log that the client has disconnected safely
+        }
 
 void NetworkManager::Login(std::string username, std::string password)
 {
-    std::string type = "Logn";
-    std::string subject  = "Auth";
-    std::string details = username + "^" + password;
+    unsigned char type = '1';
+    std::string subject = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
+    std::string details = "337f583f6ef1eeb8639f4f7af16676dd8f99b8ac1dececc8d45512bc45d3bcfc";
 
     tcpUpPacket << type << subject << details;
     tcpSocket.send(tcpUpPacket);
     if (tcpSocket.receive(tcpDownPacket)) {
         if (tcpDownPacket >> type >> subject >> details) {
-            if (type == "Logn" && subject == "Auth") {
+            if (type == '3' && subject == "Auth") {
                 if (details == "True") {
                     Settings::LoggedIn = true;
                 }
             }
         }
     }
+}
 
-    void NetworkManager::ChangeServer() {
 
+void NetworkManager::ChangeServer()
+{
+    //Should just switch the port to the login server port rather than the game port, and vice versa.
+    tcpSocket.connect(Settings::serverAddress, Settings::loginTCPPort);
+}
+
+
+void NetworkManager::Update()
+{
+    //ClearQueues();            //Used for clearing instruction queues.  May enable this under a condition at some later date if too many end up unprocessed
+    GetUpdates();               //Pull updates from the server
+    ProcessUpdates();           //Process the updates (maybe on a separate thread)
+    PushUpdates();              //Push and client changes to the server
+}
+
+
+void NetworkManager::GetUpdates()
+{
+    udpSocket.receive(udpDownPacket, Settings::serverAddress, Settings::gameUDPPort);
+}
+
+
+void NetworkManager::PushUpdates()
+{
+    while (updateQueueDown.size() > 0) {
+        NetworkInstruction currentInstruction = updateQueueDown.front();
+        udpUpPacket << currentInstruction.type << currentInstruction.subject << currentInstruction.details;
+        udpSocket.send(udpUpPacket, Settings::serverAddress, Settings::gameUDPPort);
     }
+}
 
-    void NetworkManager::Update() {
-        //ClearQueues();            Used for clearing instruction queues.  May enable this under a condition at some later date if too many end up unprocessed
-        GetUpdates();               //Pull updates from the server
-        ProcessUpdates();           //Process the updates (maybe on a separate thread)
-        PushUpdates();              //Push and client changes to the server
-    }
 
-    void NetworkManager::GetUpdates() {
-        udpSocket.receive(udpDownPacket, Settings::serverAddress, Settings::gameUDPPort);
+void NetworkManager::ProcessUpdates()
+{
+    unsigned char type;
+    std::string subject, details;
+    if (udpDownPacket >> type >> subject >> details) {                  //If the read is successful...
+        Debug::Log("UDP down packet has contents", Debug::Info);        //Log that the packet isn't empty
+        NetworkInstruction networkInstruction(type, subject, details);
+        updateQueueDown.push(networkInstruction);                       //Add a new instruction to the update queue
     }
+}
 
-    void NetworkManager::PushUpdates() {
-        udpSocket.send(udpUpPacket, Settings::serverAddress, Settings::gameTCPPort);
-    }
 
-    void NetworkManager::ProcessUpdates() {
-        std::string type, subject, details;
-        if (udpDownPacket >> type >> subject >> details) {              //If the read is successful...
-            Debug::Log("UDP down packet has contents", Debug::Info);        //Log that the packet isn't empty
-            updateQueueDown.push(new NetworkInstruction(type, subject, details));   //Add a new instruction to the update queue
-        }
+void NetworkManager::ClearQueues()          //Not currently used, might add in the event that the queue gets too long
+{
+    while (updateQueueDown.size() > 0) {
+        updateQueueDown.pop();
     }
-
-    void NetworkManager::ClearQueues() {
-        while (updateQueueDown.size() > 0) {
-            updateQueueDown.pop();
-        }
-        while (updateQueueUp.size() > 0) {
-            updateQueueUp.pop();
-        }
+    while (updateQueueUp.size() > 0) {
+        updateQueueUp.pop();
     }
+}

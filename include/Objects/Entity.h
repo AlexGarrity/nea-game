@@ -18,7 +18,6 @@ public:
     Entity();
     ~Entity();
 
-    void Translate(float deltaX, float deltaY);
 protected:
     float health;
     float movementSpeed;

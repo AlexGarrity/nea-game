@@ -7,15 +7,7 @@ Animator::Animator()
 
 }
 
-void Animator::Update()
+Animator::~Animator()
 {
 
-}
-
-bool Animator::PlayAnimation(std::string animationName)
-{
-    const auto &animation = animationMap.find(animationName);
-    if (animation != nullptr) {
-        return true;
-    }
 }

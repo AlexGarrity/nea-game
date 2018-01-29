@@ -16,10 +16,12 @@ public:
 
     static sf::IpAddress serverAddress;     //Address of the server
     static unsigned short gameUDPPort;      //The port which the game server uses to receive UDP on
-    static unsigned short gameTCPPort;      //The port which the game server uses to receive TCP on
     static unsigned short loginTCPPort;     //The port which the login server uses to receive TCP on
 
     static bool LoggedIn;                   //Whether or not the player is logged in
+
+    static char userHash[];                 //A hash of the user's username
+    static char passHash[];                 //A hash of the user's password
 };
 
 #endif // SETTINGS_H_INCLUDED

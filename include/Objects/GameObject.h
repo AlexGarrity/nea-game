@@ -18,10 +18,15 @@ public:
     GameObject();
     virtual ~GameObject();
 
+    sf::Sprite &GetSprite();
+    virtual void Update();
+    virtual void Translate(float deltaX, float deltaY);
+
 protected:
     sf::Vector2f position;
     sf::Texture texture;
     sf::Sprite sprite;
+
 private:
 
 };

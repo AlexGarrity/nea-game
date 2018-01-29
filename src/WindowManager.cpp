@@ -28,7 +28,8 @@ void WindowManager::SetFramerate(unsigned int framerate)
     if (framerate != 0) {
         //Set the max framerate to the given framerate
         window.setFramerateLimit(framerate);
-    } else {
+    }
+    else {
         //If the given framerate is 0, enable VSync
         window.setVerticalSyncEnabled(true);
     }
@@ -44,14 +45,11 @@ void WindowManager::CreateWindow(short x, short y, short depth, const char name[
 // If the close button is pressed, it closes the window
 void WindowManager::CheckEvents()
 {
-    //Create a new SFML event
-    sf::Event event;
-    //Whilst the window is checking the status of the event...
-    while (window.pollEvent(event)) {
-        //If the event type is 'closed'
-        if (event.type == sf::Event::Closed) {
-            //Close the window
-            window.close();
+    sf::Event event;                                //Create a new SFML event
+    while (window.pollEvent(event)) {               //While the window is polling for the event...
+        UIManager::CheckInput(event);               //Make the UI manager check for inputs, using the event
+        if (event.type == sf::Event::Closed) {      //If the event type is 'closed'
+            window.close();                         //Close the window
         }
     }
 }

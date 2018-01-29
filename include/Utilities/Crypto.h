@@ -9,9 +9,10 @@
 
 class Crypto {
 public:
-
+    static std::string HashSHA1(std::string M);
 protected:
 private:
+
 };
 
 #endif // CRYPTO_H

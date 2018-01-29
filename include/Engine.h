@@ -18,6 +18,7 @@
 /** Includes for testing, may remove later **/
 #include "GameObject.h"
 #include "Debug.h"
+#include "Entity.h"
 
 /** Declares functions and variables (but only functions in this case) **/
 
