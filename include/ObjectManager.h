@@ -25,7 +25,7 @@ protected:
 private:
     static void ParseInstruction(NetworkInstruction n);
     template <typename T>
-    std::vector<T> SeparateProperties(std::string details);
+    static std::vector<T> SeparateProperties(std::string details);
 
     static std::map <std::string, GameObject*> objectMap;
 };

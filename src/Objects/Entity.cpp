@@ -11,3 +11,8 @@ Entity::~Entity()
 {
     //dtor
 }
+d
+void Entity::Update()
+{
+
+}

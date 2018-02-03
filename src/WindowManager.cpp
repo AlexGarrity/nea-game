@@ -67,3 +67,8 @@ void WindowManager::Draw(sf::Drawable& object)
     //Draw the given object to the window
     window.draw(object);
 }
+
+sf::RenderWindow &GetWindow()
+{
+    return &window;
+}

@@ -3,7 +3,7 @@
 #ifndef GS_GAMEPLAY_H
 #define GS_GAMEPLAY_H
 
-#include <GameState.h>
+#include "GameState.h"
 
 /**
     Gameplay class represents the game being played.  This means that the network manager will

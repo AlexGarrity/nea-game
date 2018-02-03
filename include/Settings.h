@@ -3,13 +3,15 @@
 #ifndef SETTINGS_H_INCLUDED
 #define SETTINGS_H_INCLUDED
 
+#include <string>
+
 struct Settings {
 public:
 
     /** Display stuff **/
     static sf::Vector2i screenResolution;   //2D integer storing screen resolution
     static unsigned char bitDepth;          //The game bit depth (should be 32)
-    static const char windowName[];         //The name of the window
+    static std::string windowName;         //The name of the window
 
     /** Network stuff **/
     static const char UUID[];               //The player's UUID
@@ -20,8 +22,8 @@ public:
 
     static bool LoggedIn;                   //Whether or not the player is logged in
 
-    static char userHash[];                 //A hash of the user's username
-    static char passHash[];                 //A hash of the user's password
+    static std::string userHash;                 //A hash of the user's username
+    static std::string passHash;                 //A hash of the user's password
 };
 
 #endif // SETTINGS_H_INCLUDED

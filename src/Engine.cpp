@@ -11,6 +11,7 @@ bool Engine::Start(short x, short y, short depth, const char name[])
     WindowManager::SetFramerate(0);
     NetworkManager::InitialiseSockets("127.0.0.1", 6401, 6402);
     ObjectManager::CreateObject(new Entity(), "0000000000000001");
+    StateManager::Initialise();
     if (WindowManager::WindowIsOpen()) {
         /** TODO:  Change this to GameLoop() once the state manager works **/
         TestLoop();
@@ -19,20 +20,6 @@ bool Engine::Start(short x, short y, short depth, const char name[])
         return false;
     }
     return true;
-}
-
-void Engine::GraphicsUpdate()
-{
-    ObjectManager::DrawObjects();
-    UIManager::Update();
-    WindowManager::Clear();
-    WindowManager::Display();
-}
-
-void Engine::NetworkUpdate()
-{
-    NetworkManager::Update();
-    ObjectManager::UpdateObjects();
 }
 
 /**
@@ -50,6 +37,7 @@ void Engine::NetworkUpdate()
 
 void Engine::GameLoop()
 {
+std::thread networkThread (&Engine::NetworkUpdate, this);       //Initialise the network manager thread, which runs separately from the game thread
     while (WindowManager::WindowIsOpen()) {
         Time::Update();
         WindowManager::CheckEvents();
@@ -57,6 +45,7 @@ void Engine::GameLoop()
         WindowManager::Clear();
         WindowManager::Display();
     }
+    networkThread.detach();        //End network thread operations using detach, such that it's instant
 }
 
 /**

@@ -25,7 +25,7 @@ const char Settings::UUID[] = "00000000";       //Default to a null UUID.  If th
 bool Settings::LoggedIn = false;
 
 
-void NetworkManager::InitialiseSockets(std::string ipAddress, unsigned short tcpPort, unsigned short udpPort)
+void NetworkManager::InitialiseSockets(sf::IpAddress ipAddress, unsigned short tcpPort, unsigned short udpPort)
 {
     if (tcpSocket.connect(ipAddress, tcpPort) != sf::TcpSocket::Done) {
         Debug::Log("TCP socket connected successfully", Debug::Trace);
@@ -65,18 +65,18 @@ void NetworkManager::EndConnection()
                     if (details == "True") {                    //Checks for package
                         canDisconnectSafely = true;             //Set canDisconnectSafely to true
                     }
-                }
             }
+        }
 
-        }
-            Debug::Log ("The client has safely disconnected", Debug::Info);     //Log that the client has disconnected safely
-        }
+    }
+    Debug::Log ("The client has safely disconnected", Debug::Info);     //Log that the client has disconnected safely
+}
 
 void NetworkManager::Login(std::string username, std::string password)
 {
     unsigned char type = '1';
-    std::string subject = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
-    std::string details = "337f583f6ef1eeb8639f4f7af16676dd8f99b8ac1dececc8d45512bc45d3bcfc";
+    std::string subject = sha256(username);
+    std::string details = sha256(password);
 
     tcpUpPacket << type << subject << details;
     tcpSocket.send(tcpUpPacket);
@@ -85,6 +85,8 @@ void NetworkManager::Login(std::string username, std::string password)
             if (type == '3' && subject == "Auth") {
                 if (details == "True") {
                     Settings::LoggedIn = true;
+                    Settings::userHash = subject;
+                    Settings::passHash = details;
                 }
             }
         }

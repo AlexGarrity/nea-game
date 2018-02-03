@@ -4,6 +4,13 @@
 
 std::stack<GameState*> StateManager::stateList;
 
+void StateManager::Initialise()
+{
+    if (stateList.empty()) {
+        PushState(new GS_Initialise());
+    }
+}
+
 void StateManager::PushState(GameState* state)
 {
     //Push the given state to the state queue

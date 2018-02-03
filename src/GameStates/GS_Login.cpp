@@ -4,7 +4,7 @@
 
 void GS_Login::Input()
 {
-
+    UIManager::Update();
 }
 
 void GS_Login::Update()

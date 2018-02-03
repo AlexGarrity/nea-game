@@ -2,10 +2,10 @@
 
 #include "UIElement.h"
 
-void UIElement::Update()
+void UIElement::Update(sf::Vector2f mousePosition)
 {
-    if (sf::Mouse::getPosition().x > position.x && sf::Mouse::getPosition().x < (position.x + sprite.getLocalBounds().width)) {
-        if (sf::Mouse::getPosition().y > position.y && sf::Mouse::getPosition().y < (position.y + sprite.getLocalBounds().height)) {
+    if (mousePosition.x > position.x && mousePosition.x < (position.x + sprite.getLocalBounds().width)) {
+        if (mousePosition.y > position.y && mousePosition.y < (position.y + sprite.getLocalBounds().height)) {
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 // If the user has pressed something, call OnPress, and set heldDown to true
                 OnPress();

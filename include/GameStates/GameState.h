@@ -3,6 +3,12 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
+#include "NetworkManager.h"
+#include "ObjectManager.h"
+#include "ResourceManager.h"
+#include "WindowManager.h"
+#include "UIManager.h"
+#include "Settings.h"
 
 class GameState {
 public:

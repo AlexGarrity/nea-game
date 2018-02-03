@@ -13,39 +13,46 @@ void ObjectManager::UpdateObjects()
     }
 }
 
-void ObjectManager::NetworkUpdate() {
-        while (NetworkManager::updateQueueDown.size() > 0) {
-            NetworkInstruction currentInstruction = NetworkManager::updateQueueDown.front();
-            NetworkManager::updateQueueDown.pop();
-            ParseInstruction(currentInstruction);
+void ObjectManager::NetworkUpdate()
+{
+    while (NetworkManager::updateQueueDown.size() > 0) {
+        NetworkInstruction currentInstruction = NetworkManager::updateQueueDown.front();
+        NetworkManager::updateQueueDown.pop();
+        ParseInstruction(currentInstruction);
     }
 }
 
-void ObjectManager::ParseInstruction(const NetworkInstruction n) {
+void ObjectManager::ParseInstruction(const NetworkInstruction n)
+{
     unsigned char type = n.type;
-switch (type) {
-    case 20:
+    switch (type) {
+    case 20: {
         GameObject* obj = &ResourceManager::GetEntity(n.details);
-        CreateObject(obj, n.subject);
-    break;
-    case 21:
+        //CreateObject(obj, n.subject);
+        break;
+    }
+    case 21: {
         auto obj = objectMap.find(n.subject);
         if (obj != objectMap.end()) {
-            obj->second->Translate(dX, dY);
+            std::vector<float> properties = SeparateProperties<float>(n.details);
+            obj->second->Translate(properties[0], properties[1]);
         }
-    break;
-    case 22:
+        break;
+    }
+    case 22: {
         auto obj = objectMap.find(n.subject);
         if (obj != objectMap.end()) {
-            std::vector<float> properties = SeparateProperties(n.details)
-            obj->second->SetVitals(h, s, m);
+            std::vector<float> properties = SeparateProperties<float>(n.details);
+            obj->second->SetVitals(properties[0], properties[1], properties[2]);
         }
-    break;
-}
+        break;
+    }
+    }
 }
 
 template <typename T>
-std::vector<T> ObjectManager::SeparateProperties(std::string details) {
+std::vector<T> ObjectManager::SeparateProperties(std::string details)
+{
     unsigned short startMarker, endMarker;
     std::vector<T> returnVector;
     if (std::isdigit(details[0])) {
@@ -54,13 +61,14 @@ std::vector<T> ObjectManager::SeparateProperties(std::string details) {
     for (unsigned int i = 0; i < details.size(); i++) {
         if (details[i] == '|') {
             endMarker = i;
-            T property << details.substr(details.begin(); endMarker - startMarker);
+            T property << details.substr(details.begin(), endMarker - startMarker);
             returnVector.push_back(property);
             startMarker = endMarker;
         }
     }
 }
 
-void ObjectManager::CreateObject(GameObject *object, char UUID[16]) {
+void ObjectManager::CreateObject(GameObject *object, char UUID[16])
+{
     objectMap.insert(std::make_pair(UUID, object));
 }

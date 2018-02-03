@@ -12,11 +12,12 @@
     a barrel which is stationary and will always be in its set position)
 **/
 
-
 class Entity : public GameObject {
 public:
     Entity();
     ~Entity();
+
+    void Update();
 
 protected:
     float health;

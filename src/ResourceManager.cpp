@@ -22,7 +22,8 @@ sf::Texture& ResourceManager::Get(const char* texName)
     return *tex->second;
 }
 
-GameObject* ResourceManager::GetEntity(std::string n) {
+GameObject* ResourceManager::GetEntity(std::string n)
+{
     auto obj = objectMap.find(n);
     return *obj->second;
 }

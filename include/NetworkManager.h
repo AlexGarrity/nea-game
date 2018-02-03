@@ -10,6 +10,7 @@
 
 #include "Debug.h"
 #include "Settings.h"
+#include "Crypto.h"
 
 struct NetworkInstruction {
 public:
@@ -26,7 +27,7 @@ public:
 
 class NetworkManager {
 public:
-    static void InitialiseSockets(std::string ipAddress, unsigned short tcpPort, unsigned short udpPort);
+    static void InitialiseSockets(sf::IpAddress ipAddress, unsigned short tcpPort, unsigned short udpPort);
     static void Update();
     static void EndConnection();
     static void Login(std::string username, std::string password);

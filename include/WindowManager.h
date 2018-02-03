@@ -20,6 +20,8 @@ public:
 
     static void Draw(sf::Drawable& object);
 
+    static sf::RenderWindow &GetWindow();
+
 
 protected:
 

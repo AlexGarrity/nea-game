@@ -14,6 +14,7 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include/UI" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network-d" />
@@ -30,6 +31,7 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-O4" />
+					<Add directory="include/UI" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -47,9 +49,10 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-Weffc++" />
-					<Add option="-std=c++11" />
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add directory="include/UI" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network" />
@@ -82,6 +85,7 @@
 		<Unit filename="include/Debug.h" />
 		<Unit filename="include/Engine.h" />
 		<Unit filename="include/GameStates/GS_Gameplay.h" />
+		<Unit filename="include/GameStates/GS_Initialise.h" />
 		<Unit filename="include/GameStates/GS_Login.h" />
 		<Unit filename="include/GameStates/GameState.h" />
 		<Unit filename="include/GameStates/StateManager.h" />
@@ -91,6 +95,7 @@
 		<Unit filename="include/Objects/GameObject.h" />
 		<Unit filename="include/ResourceManager.h" />
 		<Unit filename="include/Settings.h" />
+		<Unit filename="include/UI/UIButton.h" />
 		<Unit filename="include/UI/UIElement.h" />
 		<Unit filename="include/UI/UIManager.h" />
 		<Unit filename="include/Utilities/Crypto.h" />
@@ -105,6 +110,7 @@
 		<Unit filename="src/Debug.cpp" />
 		<Unit filename="src/Engine.cpp" />
 		<Unit filename="src/GameStates/GS_Gameplay.cpp" />
+		<Unit filename="src/GameStates/GS_Initialise.cpp" />
 		<Unit filename="src/GameStates/GS_Login.cpp" />
 		<Unit filename="src/GameStates/GameState.cpp" />
 		<Unit filename="src/GameStates/StateManager.cpp" />
@@ -113,6 +119,7 @@
 		<Unit filename="src/Objects/Entity.cpp" />
 		<Unit filename="src/Objects/GameObject.cpp" />
 		<Unit filename="src/ResourceManager.cpp" />
+		<Unit filename="src/UI/UIButton.cpp" />
 		<Unit filename="src/UI/UIElement.cpp" />
 		<Unit filename="src/UI/UIManager.cpp" />
 		<Unit filename="src/Utilities/Crypto.cpp" />
