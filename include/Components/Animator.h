@@ -13,14 +13,15 @@
 **/
 
 
-class Animator {
+class Animator
+{
 public:
     Animator();
     virtual ~Animator();
 
     void Update();
 
-    bool PlayAnimation(std::string animationName);
+    bool PlayAnimation (std::string animationName);
 protected:
 private:
     std::map<std::string, Animation*> animationMap;

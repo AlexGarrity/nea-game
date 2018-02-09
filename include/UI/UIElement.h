@@ -11,7 +11,8 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Mouse.hpp>
 
-class UIElement {
+class UIElement
+{
 public:
     UIElement();
     void Update();

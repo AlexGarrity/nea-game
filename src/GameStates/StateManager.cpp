@@ -6,21 +6,23 @@ std::stack<GameState*> StateManager::stateList;
 
 void StateManager::Initialise()
 {
-    if (stateList.empty()) {
-        PushState(new GS_Initialise());
+    if (stateList.empty() )
+    {
+        PushState (new GS_Initialise() );
     }
 }
 
-void StateManager::PushState(GameState* state)
+void StateManager::PushState (GameState* state)
 {
     //Push the given state to the state queue
-    stateList.push(state);
+    stateList.push (state);
 }
 
 void StateManager::Update()
 {
     //If the state queue isn't empty...
-    if (!stateList.empty()) {
+    if (!stateList.empty() )
+    {
         //Create a pointer to a GameState, and remove the state on top
         GameState* state = PopState();
         //Call the state's input function
@@ -36,6 +38,8 @@ GameState* StateManager::PopState()
 {
     //Create a new GameState pointer, and set it to the value of the pointer at the front of the queue
     GameState* state = stateList.top();
+    //Delete the actual state...
+    delete stateList.top();
     //Delete the pointer at the top of the queue
     stateList.pop();
     //Return the state

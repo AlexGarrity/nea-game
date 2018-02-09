@@ -4,7 +4,7 @@
 
 void GS_Initialise::Draw()
 {
-    WindowManager::CreateWindow(Settings::screenResolution.x, Settings::screenResolution.y, Settings::bitDepth, Settings::windowName.c_str());
+    WindowManager::CreateWindow (Settings::screenResolution.x, Settings::screenResolution.y, Settings::bitDepth, Settings::windowName.c_str() );
 }
 
 void GS_Initialise::Input()
@@ -14,6 +14,6 @@ void GS_Initialise::Input()
 
 void GS_Initialise::Update()
 {
-    NetworkManager::InitialiseSockets(Settings::serverAddress, Settings::loginTCPPort, Settings::gameUDPPort);
-    ResourceManager::LoadManifest("assets/manifest.xml");
+    NetworkManager::InitialiseSockets (Settings::serverAddress, Settings::loginTCPPort, Settings::gameUDPPort);
+    ResourceManager::LoadManifest ("assets/manifest.xml");
 }

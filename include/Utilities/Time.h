@@ -11,7 +11,8 @@
     and fixed update timings
 **/
 
-class Time {
+class Time
+{
 public:
     static void Update();
     static float deltaTime;

@@ -15,6 +15,8 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include/UI" />
+					<Add directory="include/Objects" />
+					<Add directory="include/Map" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network-d" />
@@ -32,6 +34,8 @@
 				<Compiler>
 					<Add option="-O4" />
 					<Add directory="include/UI" />
+					<Add directory="include/Objects" />
+					<Add directory="include/Map" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -53,6 +57,8 @@
 					<Add option="-Wall" />
 					<Add option="-std=c++11" />
 					<Add directory="include/UI" />
+					<Add directory="include/Objects" />
+					<Add directory="include/Map" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network" />
@@ -82,6 +88,7 @@
 		</Linker>
 		<Unit filename="include/Components/Animation.h" />
 		<Unit filename="include/Components/Animator.h" />
+		<Unit filename="include/Components/Statblock.h" />
 		<Unit filename="include/Debug.h" />
 		<Unit filename="include/Engine.h" />
 		<Unit filename="include/GameStates/GS_Gameplay.h" />
@@ -89,6 +96,9 @@
 		<Unit filename="include/GameStates/GS_Login.h" />
 		<Unit filename="include/GameStates/GameState.h" />
 		<Unit filename="include/GameStates/StateManager.h" />
+		<Unit filename="include/Map/Level.h" />
+		<Unit filename="include/Map/Map.h" />
+		<Unit filename="include/Map/MapCell.h" />
 		<Unit filename="include/NetworkManager.h" />
 		<Unit filename="include/ObjectManager.h" />
 		<Unit filename="include/Objects/Entity.h" />
@@ -107,6 +117,7 @@
 		</Unit>
 		<Unit filename="src/Components/Animation.cpp" />
 		<Unit filename="src/Components/Animator.cpp" />
+		<Unit filename="src/Components/Statblock.cpp" />
 		<Unit filename="src/Debug.cpp" />
 		<Unit filename="src/Engine.cpp" />
 		<Unit filename="src/GameStates/GS_Gameplay.cpp" />
@@ -114,6 +125,9 @@
 		<Unit filename="src/GameStates/GS_Login.cpp" />
 		<Unit filename="src/GameStates/GameState.cpp" />
 		<Unit filename="src/GameStates/StateManager.cpp" />
+		<Unit filename="src/Map/Level.cpp" />
+		<Unit filename="src/Map/Map.cpp" />
+		<Unit filename="src/Map/MapCell.cpp" />
 		<Unit filename="src/NetworkManager.cpp" />
 		<Unit filename="src/ObjectManager.cpp" />
 		<Unit filename="src/Objects/Entity.cpp" />

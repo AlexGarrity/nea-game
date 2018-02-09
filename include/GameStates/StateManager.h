@@ -10,11 +10,12 @@
 #include "GS_Login.h"
 #include "GS_Initialise.h"
 
-class StateManager {
+class StateManager
+{
 public:
     static void Initialise();
     static void Update();
-    static void PushState(GameState* state);
+    static void PushState (GameState* state);
     static GameState* PopState();
 
 protected:

@@ -2,7 +2,7 @@
 
 #include "Animation.h"
 
-Animation::Animation(sf::Sprite &entitySprite)
+Animation::Animation (sf::Sprite &entitySprite)
 {
     sprite = &entitySprite;
     frameTime = animationTime / frameCount;
@@ -19,17 +19,23 @@ void Animation::Update()
     sf::Vector2i sheetSize; // = sprite->getTexture()->getSize();
     sf::IntRect textureRect = sprite->getTextureRect();
 
-    if (currentFrame == 0) {
-        textureRect = sf::IntRect(0, 0, textureSize.x, textureSize.y);
+    if (currentFrame == 0)
+    {
+        textureRect = sf::IntRect (0, 0, textureSize.x, textureSize.y);
     }
 
-    while (elapsedTime < animationTime && currentFrame <= frameCount) {
+    while (elapsedTime < animationTime && currentFrame <= frameCount)
+    {
         textureRect.left += textureSize.x;
-        if (textureRect.left + textureSize.x > sheetSize.x) {
+
+        if (textureRect.left + textureSize.x > sheetSize.x)
+        {
             textureRect.left = 0;
             textureRect.top += textureRect.height;
         }
+
         elapsedTime -= frameTime;
     }
-    sprite->setTextureRect(textureRect);
+
+    sprite->setTextureRect (textureRect);
 }

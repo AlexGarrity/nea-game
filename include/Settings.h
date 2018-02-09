@@ -4,8 +4,10 @@
 #define SETTINGS_H_INCLUDED
 
 #include <string>
+#include <SFML/Network/IpAddress.hpp>
 
-struct Settings {
+struct Settings
+{
 public:
 
     /** Display stuff **/

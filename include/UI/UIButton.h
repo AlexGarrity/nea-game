@@ -4,7 +4,8 @@
 #include <UIElement.h>
 
 
-class UIButton : public UIElement {
+class UIButton : public UIElement
+{
 public:
     UIButton();
     virtual ~UIButton();
@@ -16,7 +17,7 @@ public:
 protected:
 
 private:
-    std::function<void()> func;
+    std::function<void() > func;
     bool edge;  //Rising or falling
 };
 

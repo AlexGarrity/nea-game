@@ -22,9 +22,10 @@
 
 /** Declares functions and variables (but only functions in this case) **/
 
-class Engine {
+class Engine
+{
 public:
-    bool Start(short x, short y, short depth, const char name[]);
+    bool Start (short x, short y, short depth, const char name[]);
 
 protected:
 

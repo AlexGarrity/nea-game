@@ -9,7 +9,8 @@
 #include "UIElement.h"
 
 
-class UIManager {
+class UIManager
+{
 public:
     static void Update();
 protected:

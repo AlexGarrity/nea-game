@@ -5,7 +5,8 @@
 
 #include "GameState.h"
 
-class GS_Login : public GameState {
+class GS_Login : public GameState
+{
 public:
     void Input();
     void Update();

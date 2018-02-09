@@ -1,29 +1,43 @@
-/**     Alex Garrity, 2018      **/
-
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <SFML/System/Vector2.hpp>
+
+#include <cstring>
+
+#include "Statblock.h"
 #include "GameObject.h"
-#include "Animator.h"
 
-/**
-    Entity describes an object that is 'living' which will be
-    updated by the server and be 'alive' (as opposed to something like
-    a barrel which is stationary and will always be in its set position)
-**/
+class Entity : public GameObject
+{
 
-class Entity : public GameObject {
+enum EntityState { Idle, Moving, Attacking, Fleeing };
+
 public:
-    Entity();
-    ~Entity();
+    Entity (const char *c);
+    Entity (float xPos, float yPos, unsigned char worldX, unsigned char worldY, unsigned char *c, Stats &s, Vitals &v);
 
-    void Update();
+    virtual void Update();
+    unsigned char* GetWorldPosition();
+
+    char* GetUUID();
+    void SetUUID(const char *c);
+
+    Vitals &GetVitals();
+    Stats &GetStats();
 
 protected:
-    float health;
-    float movementSpeed;
 
 private:
+    Stats stats;
+    Vitals vitals;
+
+    EntityState currentState;
+
+    sf::Vector2f cellPosition;
+    unsigned char worldPosition[2];
+
+    char UUID[16];
 };
 
 #endif // ENTITY_H

@@ -1,6 +1,6 @@
 #include "UIButton.h"
 
-UIButton::UIButton(std::function<void()> f)
+UIButton::UIButton (std::function<void() > f)
 {
     func = f;
 }
@@ -17,14 +17,16 @@ void UIButton::OnHover()
 
 void UIButton::OnPress()
 {
-    if (edge == false) {
+    if (edge == false)
+    {
         func();
     }
 }
 
 void UIButton::OnRelease()
 {
-    if (edge == true) {
+    if (edge == true)
+    {
         func();
     }
 }

@@ -8,9 +8,10 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
-class Animation {
+class Animation
+{
 public:
-    Animation(sf::Sprite &entitySprite);
+    Animation (sf::Sprite &entitySprite);
     virtual ~Animation();
 
     void Update();

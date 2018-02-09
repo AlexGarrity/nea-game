@@ -8,17 +8,18 @@
 
 /** Entire class is static since basically everything accesses this is some way or another **/
 
-class WindowManager {
+class WindowManager
+{
 public:
     static void Clear();
     static void Display();
-    static void SetFramerate(unsigned int framerate);
-    static void CreateWindow(short x, short y, short depth, const char name[]);
+    static void SetFramerate (unsigned int framerate);
+    static void CreateWindow (short x, short y, short depth, const char name[]);
 
     static void CheckEvents();
     static bool WindowIsOpen();
 
-    static void Draw(sf::Drawable& object);
+    static void Draw (sf::Drawable& object);
 
     static sf::RenderWindow &GetWindow();
 

@@ -11,7 +11,8 @@
     GUI and full user input
 **/
 
-class GS_Gameplay : public GameState {
+class GS_Gameplay : public GameState
+{
 public:
     void Input();
     void Update();

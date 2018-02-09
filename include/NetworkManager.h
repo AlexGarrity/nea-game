@@ -5,6 +5,7 @@
 
 #include <queue>
 #include <string>
+#include <cstring>
 
 #include <SFML/Network.hpp>
 
@@ -12,25 +13,27 @@
 #include "Settings.h"
 #include "Crypto.h"
 
-struct NetworkInstruction {
+struct NetworkInstruction
+{
 public:
     unsigned char type;
-    std::string subject;
+    char subject[16];
     std::string details;
-    NetworkInstruction (unsigned char t, std::string s, std::string d)
+    NetworkInstruction (unsigned char t, char *s, std::string d)
     {
         type = t;
-        subject = s;
+        std::strcpy(subject, s);
         details = d;
     }
 };
 
-class NetworkManager {
+class NetworkManager
+{
 public:
-    static void InitialiseSockets(sf::IpAddress ipAddress, unsigned short tcpPort, unsigned short udpPort);
+    static void InitialiseSockets (sf::IpAddress ipAddress, unsigned short tcpPort, unsigned short udpPort);
     static void Update();
     static void EndConnection();
-    static void Login(std::string username, std::string password);
+    static void Login (std::string username, std::string password);
 
     static std::queue <NetworkInstruction> updateQueueDown;
     static std::queue <NetworkInstruction> updateQueueUp;
