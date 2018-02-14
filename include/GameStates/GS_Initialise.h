@@ -4,12 +4,19 @@
 #include "GameState.h"
 #include "GS_Login.h"
 
-class GS_Initialise : public GameState
-{
+#include "Settings.h"
+
+/**
+    Depreciated?
+**/
+
+class GS_Initialise : public GameState {
 public:
+    /*
     void Input();
     void Update();
     void Draw();
+    */
 protected:
 
 private:

@@ -11,19 +11,26 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Mouse.hpp>
 
-class UIElement
-{
+/**
+    An item that fits into the Graphical User Interface.  No consoles over here (except
+    for if you need more verbose logging).
+    This is another class that's basically only used as a base for other classes.
+**/
+
+class UIElement {
 public:
-    UIElement();
-    void Update();
-    sf::Sprite& GetSprite();
+
+    UIElement( sf::Vector2f pos );
+    virtual ~UIElement();
+
+    void Update ( sf::Vector2i mousePosition );
+    virtual sf::Drawable &GetSprite();
 protected:
-    virtual void OnPress() =0;
-    virtual void OnRelease() =0;
-    virtual void OnHover() =0;
+    virtual void OnPress();
+    virtual void OnRelease();
+    virtual void OnHover();
 
     sf::Vector2f position;
-    sf::Text text;
     sf::Sprite sprite;
     sf::Texture texture;
 

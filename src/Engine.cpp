@@ -5,21 +5,18 @@
 // Constructor that I deleted was here.
 
 
-bool Engine::Start (short x, short y, short depth, const char name[])
+bool Engine::Start ( short x, short y, short depth, const char name[] )
 {
-    WindowManager::CreateWindow (x, y, depth, name);
-    WindowManager::SetFramerate (0);
-    NetworkManager::InitialiseSockets ("127.0.0.1", 6401, 6402);
-    ObjectManager::CreateEntity (new Entity("000000000000000"));
+    WindowManager::CreateWindow ( x, y, depth, name );
+    WindowManager::SetFramerate ( 0 );
+    NetworkManager::InitialiseSockets ();
+    ObjectManager::CreateEntity ( new Entity ( "000000000000000" ) );
     StateManager::Initialise();
 
-    if (WindowManager::WindowIsOpen() )
-    {
+    if ( WindowManager::WindowIsOpen() ) {
         /** TODO:  Change this to GameLoop() once the state manager works **/
         GameLoop();
-    }
-    else
-    {
+    } else {
         return false;
     }
 
@@ -39,14 +36,27 @@ bool Engine::Start (short x, short y, short depth, const char name[])
             End the loop (closes the application)
 **/
 
+void Engine::GraphicsUpdate()
+{
+    ObjectManager::DrawObjects();
+    //EntityManager::DrawObject();       Maybe separate the two out?
+}
+
+void Engine::NetworkUpdate()
+{
+    while ( WindowManager::WindowIsOpen() ) {
+        NetworkManager::Update();
+    }
+}
+
 void Engine::GameLoop()
 {
-    std::thread networkThread (&Engine::NetworkUpdate, this);       //Initialise the network manager thread, which runs separately from the game thread
+    std::thread networkThread ( &Engine::NetworkUpdate, this );     //Initialise the network manager thread, which runs separately from the game thread
 
-    while (WindowManager::WindowIsOpen() )
-    {
+    while ( WindowManager::WindowIsOpen() ) {
         Time::Update();
         WindowManager::CheckEvents();
+        UIManager::Update();              //Make the UI manager check for inputs, using the event
         StateManager::Update();
         WindowManager::Clear();
         WindowManager::Display();
@@ -65,14 +75,13 @@ void Engine::GameLoop()
 
 void Engine::TestLoop()
 {
-    ResourceManager::Load ("assets/texture.png", "texture");
+    ResourceManager::Load ( "assets/texture.png", "texture" );
     //ObjectManager::CreateObject("texture", 50, 50);
 
     //std::thread graphicsThread(Engine::GraphicsUpdate);           // Drawing and updating objects may be done on a separate thread
-    std::thread networkThread (&Engine::NetworkUpdate, this);     // Sending and receiving data to and from the server is done in a separate thread
+    std::thread networkThread ( &Engine::NetworkUpdate, this );   // Sending and receiving data to and from the server is done in a separate thread
 
-    while (WindowManager::WindowIsOpen() )
-    {
+    while ( WindowManager::WindowIsOpen() ) {
         WindowManager::CheckEvents();
         GraphicsUpdate();       //Updating graphics is on the main thread for now
     }

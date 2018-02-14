@@ -2,8 +2,7 @@
 #define MAPCELL_H
 
 
-class MapCell
-{
+class MapCell {
 public:
     MapCell();
     virtual ~MapCell();

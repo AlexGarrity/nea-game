@@ -10,12 +10,17 @@
 #include "GS_Login.h"
 #include "GS_Initialise.h"
 
-class StateManager
-{
+/**
+    The state manager handles the change and processing of states.  In ways, it's the
+    'real' engine as it handles the way the game flows.  The engine class is more of a
+    way to make them all interact properly.
+**/
+
+class StateManager {
 public:
     static void Initialise();
     static void Update();
-    static void PushState (GameState* state);
+    static void PushState ( GameState* state );
     static GameState* PopState();
 
 protected:

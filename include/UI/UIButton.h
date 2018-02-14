@@ -1,13 +1,20 @@
 #ifndef UIBUTTON_H
 #define UIBUTTON_H
 
-#include <UIElement.h>
+#include <functional>
 
+#include "UIElement.h"
+#include "UILabel.h"
 
-class UIButton : public UIElement
-{
+/**
+    A button.  You can press it and it does whatever you want it to.
+    Or it might not.  I, for one, welcome our new button overlords.
+**/
+
+class UIButton : public UIElement, UILabel {
 public:
-    UIButton();
+    UIButton(std::function<void(void)> f, sf::Vector2f pos, std::string buttonText, unsigned char textSize);
+    UIButton(std::function<void(void)> f, sf::Vector2f pos);
     virtual ~UIButton();
 
     void OnPress();
@@ -18,7 +25,6 @@ protected:
 
 private:
     std::function<void() > func;
-    bool edge;  //Rising or falling
 };
 
 #endif // UIBUTTON_H

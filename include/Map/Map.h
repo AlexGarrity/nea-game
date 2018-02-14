@@ -6,13 +6,12 @@
 #include "Level.h"
 #include "Settings.h"
 
-class Map
-{
+class Map {
 public:
     Map();
     virtual ~Map();
 
-    void LoadLevel (Level &level, unsigned int levelX = 50, unsigned int levelY = 50, unsigned int tileSize = 32, unsigned int tileSetX = 1024, unsigned int tileSetY = 1024);
+    void LoadLevel ( Level &level, unsigned int levelX = 50, unsigned int levelY = 50, unsigned int tileSize = 32, unsigned int tileSetX = 1024, unsigned int tileSetY = 1024 );
 
 protected:
 

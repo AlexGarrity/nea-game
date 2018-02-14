@@ -2,12 +2,11 @@
 
 #include "Debug.h"
 
-void Debug::Log (std::string message, type errorType)
+void Debug::Log ( std::string message, type errorType )
 {
     std::string prefix;
 
-    switch (errorType)
-    {
+    switch ( errorType ) {
     case Trace:
         prefix = "Trace";
         break;
@@ -30,7 +29,7 @@ void Debug::Log (std::string message, type errorType)
 
     case Fatal:
         std::cout << "A fatal error has occured: " << message << std::endl << "The application will now terminate." << std::endl;
-        exit (EXIT_FAILURE);
+        exit ( EXIT_FAILURE );
         break;
     }
 

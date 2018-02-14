@@ -11,8 +11,7 @@
 
 **/
 
-class Level
-{
+class Level {
 public:
     Level();
     virtual ~Level();

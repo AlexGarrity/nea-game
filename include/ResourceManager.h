@@ -17,63 +17,35 @@
 enum XMLTypes { Resource, Type, FilePath, Invalid };
 enum ResourceTypes { Graphic, SFX, Music, GUI };
 
-struct Resource
-{
+
+/**
+    Holds the data for one resource: what type of resource it is and where it's stored.
+**/
+
+struct Resource {
     ResourceTypes type;
     std::string filePath;
-
-    std::string GenerateName()
-    {
-        unsigned short startMarker = 0;
-
-        for (unsigned int i = filePath.size(); i > 0; i--)
-        {
-            if (filePath[i] == '/')
-            {
-                startMarker = i+1;
-                break;
-            }
-        }
-
-        std::string prefix;
-
-        switch (type)
-        {
-        case Graphic:
-            prefix = "gr_";
-            break;
-
-        case SFX:
-            prefix = "se_";
-            break;
-
-        case Music:
-            prefix = "mu_";
-            break;
-
-        case GUI:
-            prefix = "ui_";
-            break;
-        }
-
-        std::string internalName = prefix + filePath.substr (startMarker, filePath.size() - startMarker - 4);
-        return internalName;            //Wouldn't let me do this with a single constructor for some reason...
-    }
+    std::string GenerateName();
 };
 
-class ResourceManager
-{
+/**
+    The Resource Manager handles the reading of manifests, such that resources such as sounds
+    and graphics can be loaded into the program.  After that, it handles giving resources to
+    objects that require them.
+**/
+
+class ResourceManager {
 public:
     //Function to load textures given a filepath and a texture name
-    static void Load (const char* filePath, const char* texName);
+    static void Load ( const char* filePath = nullptr, const char* texName = nullptr);
 
-    static Entity &GetEntity (std::string entityName);
+    static Entity *GetEntity ( std::string entityName = "");
     //Function to return textures
-    static sf::Texture &Get (const char* texName);
+    static sf::Texture &Get ( const char* texName = nullptr);
     //Function which will load a list of files from a manifest and save them as resources
-    static void LoadManifest (const char* filePath);
+    static void LoadManifest ( const char* filePath = nullptr);
 
-    static XMLTypes GetTag (std::string currentLine);
+    static XMLTypes GetTag ( std::string currentLine = "");
 
 protected:
 

@@ -14,28 +14,32 @@
 #include <cctype>
 #include <sstream>
 
-class ObjectManager
-{
+/**
+    The Object Manager handles updating and drawing all entities and object in
+    existence (according to the client)
+**/
+
+class ObjectManager {
 public:
     static void UpdateObjects();
     static void DrawObjects();
 
     static void NetworkUpdate();
-    static void CreateObject (GameObject *object, char UUID[16]);
-    static void CreateEntity (Entity *entity);
+    static void CreateObject ( GameObject *object, std::string UUID );
+    static void CreateEntity ( Entity *entity );
 
 
 protected:
 private:
-    static void ParseInstruction (NetworkInstruction n);
+    static void ParseInstruction ( NetworkInstruction n );
     template <typename T>
-    static std::vector<T> SeparateProperties (std::string details);
+    static std::vector<T> SeparateProperties ( std::string details );
 
-    static std::map <char[16], GameObject*> objectMap;
-    static std::map <char[16], Entity*> entityMap;
+    static std::map <std::string, GameObject*> objectMap;
+    static std::map <std::string, Entity*> entityMap;
 
-    static std::map<char[16], GameObject*>::iterator itObject;
-    static std::map<char[16], Entity*>::iterator itEntity;
+    static std::map<std::string, GameObject*>::iterator itObject;
+    static std::map<std::string, Entity*>::iterator itEntity;
 };
 
 #endif // OBJECTMANAGER_H

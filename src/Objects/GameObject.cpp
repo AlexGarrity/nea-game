@@ -22,7 +22,7 @@ void GameObject::Update ()
 
 }
 
-void GameObject::Translate (float dX, float dY)
+void GameObject::Translate ( float dX, float dY )
 {
     position.x += dX;
     position.y += dY;

@@ -1,6 +1,6 @@
 /**     Alex Garrity, 2018      **/
 
-#include "Time.h"
+#include "Time.hpp"
 
 sf::Clock Time::clock;
 float Time::deltaTime;

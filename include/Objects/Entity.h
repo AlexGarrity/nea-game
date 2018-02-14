@@ -3,25 +3,29 @@
 
 #include <SFML/System/Vector2.hpp>
 
-#include <cstring>
+#include <string>
 
 #include "Statblock.h"
 #include "GameObject.h"
 
-class Entity : public GameObject
-{
+/**
+    An entity is an object that is 'living'.  This generally means that it will move around
+    and interact with other entities in the world, such as players.
+**/
 
-enum EntityState { Idle, Moving, Attacking, Fleeing };
+class Entity : public GameObject {
+
+    enum EntityState { Idle, Moving, Attacking, Fleeing };
 
 public:
-    Entity (const char *c);
-    Entity (float xPos, float yPos, unsigned char worldX, unsigned char worldY, unsigned char *c, Stats &s, Vitals &v);
+    Entity ( std::string c );
+    Entity ( float xPos, float yPos, unsigned char worldX, unsigned char worldY, std::string c, Stats &s, Vitals &v );
 
     virtual void Update();
     unsigned char* GetWorldPosition();
 
-    char* GetUUID();
-    void SetUUID(const char *c);
+    std::string GetUUID();
+    void SetUUID ( const std::string s );
 
     Vitals &GetVitals();
     Stats &GetStats();
@@ -37,7 +41,7 @@ private:
     sf::Vector2f cellPosition;
     unsigned char worldPosition[2];
 
-    char UUID[16];
+    std::string UUID;
 };
 
 #endif // ENTITY_H

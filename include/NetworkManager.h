@@ -5,7 +5,6 @@
 
 #include <queue>
 #include <string>
-#include <cstring>
 
 #include <SFML/Network.hpp>
 
@@ -13,27 +12,36 @@
 #include "Settings.h"
 #include "Crypto.h"
 
-struct NetworkInstruction
-{
+/**
+    A network instruction is a simple structure that keeps the style of
+    any instructions sent over a socket consistent on both ends, for
+    all types of messages.
+**/
+
+struct NetworkInstruction {
 public:
     unsigned char type;
-    char subject[16];
+    std::string subject;
     std::string details;
-    NetworkInstruction (unsigned char t, char *s, std::string d)
+    NetworkInstruction ( unsigned char t, std::string s, std::string d )
     {
         type = t;
-        std::strcpy(subject, s);
+        subject = s;
         details = d;
     }
 };
 
-class NetworkManager
-{
+/**
+    The Network Manager handles communications between the client and the server, including
+    player input, entity positioning and spawning, time synchronisation, and logging in.
+**/
+
+class NetworkManager {
 public:
-    static void InitialiseSockets (sf::IpAddress ipAddress, unsigned short tcpPort, unsigned short udpPort);
+    static void InitialiseSockets ();
     static void Update();
     static void EndConnection();
-    static void Login (std::string username, std::string password);
+    static void Login ( std::string username, std::string password );
 
     static std::queue <NetworkInstruction> updateQueueDown;
     static std::queue <NetworkInstruction> updateQueueUp;

@@ -3,15 +3,20 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
-#include "Time.h"       //Used in timing animations for smooth playback
+#include "Time.hpp"       //Used in timing animations for smooth playback
 
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
-class Animation
-{
+/**
+    An animation is a set of instructions for displaying a sequence of images in
+    such and order that the user is fooled into thinking that something is moving.
+    That chicken's not really moving, you just think it is...
+**/
+
+class Animation {
 public:
-    Animation (sf::Sprite &entitySprite);
+    Animation ( sf::Sprite &entitySprite );
     virtual ~Animation();
 
     void Update();

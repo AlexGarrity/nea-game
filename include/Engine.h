@@ -13,7 +13,8 @@
 #include "StateManager.h"
 #include "NetworkManager.h"
 #include "ResourceManager.h"
-#include "Time.h"
+#include "UIManager.h"
+#include "Time.hpp"
 
 /** Includes for testing, may remove later **/
 #include "GameObject.h"
@@ -22,10 +23,15 @@
 
 /** Declares functions and variables (but only functions in this case) **/
 
-class Engine
-{
+/**
+    The Engine class is essentially a container for a bunch of management
+    classes and general update functions.  It does very little processing of its
+    own.
+**/
+
+class Engine {
 public:
-    bool Start (short x, short y, short depth, const char name[]);
+    bool Start ( short x, short y, short depth, const char name[] );
 
 protected:
 

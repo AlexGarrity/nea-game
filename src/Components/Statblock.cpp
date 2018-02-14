@@ -1,6 +1,6 @@
 #include "Statblock.h"
 
-Vitals::Vitals (float h, float s, float m, float mH, float mS, float mM)
+Vitals::Vitals ( float h, float s, float m, float mH, float mS, float mM )
 {
     health = h;
     maxHealth = mH;
@@ -10,7 +10,7 @@ Vitals::Vitals (float h, float s, float m, float mH, float mS, float mM)
     maxMagic = mM;
 }
 
-Vitals::Vitals (const Vitals &v)
+Vitals::Vitals ( const Vitals &v )
 {
     health = v.health;
     maxHealth = v.maxHealth;
@@ -25,14 +25,13 @@ Vitals::Vitals()
 
 }
 
-void Vitals::ApplyDamage (float x, unsigned char t)
+void Vitals::ApplyDamage ( float x, unsigned char t )
 {
-    switch (t)
-    {
+    switch ( t ) {
     case 'h':
         health -= x;
 
-        if (health > maxHealth)
+        if ( health > maxHealth )
             health = maxHealth;
 
         break;
@@ -40,7 +39,7 @@ void Vitals::ApplyDamage (float x, unsigned char t)
     case 's':
         stamina -= x;
 
-        if (stamina > maxStamina)
+        if ( stamina > maxStamina )
             stamina = maxStamina;
 
         break;
@@ -48,23 +47,21 @@ void Vitals::ApplyDamage (float x, unsigned char t)
     case 'm':
         magic -= x;
 
-        if (magic > maxMagic)
+        if ( magic > maxMagic )
             magic = maxMagic;
 
         break;
     }
 }
 
-void Vitals::SetVitals (float x, unsigned char t, bool replenish)
+void Vitals::SetVitals ( float x, unsigned char t, bool replenish )
 {
-    switch (t)
-    {
+    switch ( t ) {
     case 'h':
         maxHealth = x;
 
-        if (replenish)
-        {
-            ApplyDamage (health - maxHealth, t);
+        if ( replenish ) {
+            ApplyDamage ( health - maxHealth, t );
         }
 
         break;
@@ -72,9 +69,8 @@ void Vitals::SetVitals (float x, unsigned char t, bool replenish)
     case 's':
         maxStamina = x;
 
-        if (replenish)
-        {
-            ApplyDamage (stamina - maxStamina, t);
+        if ( replenish ) {
+            ApplyDamage ( stamina - maxStamina, t );
         }
 
         break;
@@ -82,9 +78,8 @@ void Vitals::SetVitals (float x, unsigned char t, bool replenish)
     case 'm':
         maxMagic = x;
 
-        if (replenish)
-        {
-            ApplyDamage (magic - maxMagic, t);
+        if ( replenish ) {
+            ApplyDamage ( magic - maxMagic, t );
         }
 
         break;
@@ -93,15 +88,22 @@ void Vitals::SetVitals (float x, unsigned char t, bool replenish)
 
 void Vitals::Kill()
 {
-    ApplyDamage (health, 'h');  //Should just straight up kill it, but if in doubt, (I'll add something later...)
+    ApplyDamage ( health, 'h' ); //Should just straight up kill it, but if in doubt, (I'll add something later...)
 }
 
 
-Stats::Stats() {
+Stats::Stats()
+{
 
 }
 
-Stats::Stats(Stat sword, Stat axe, Stat hammer, Stat bow, Stat magic) {
+Stats::~Stats()
+{
+
+}
+
+Stats::Stats ( Stat sword, Stat axe, Stat hammer, Stat bow, Stat magic )
+{
     statSword = sword;
     statAxe = axe;
     statHammer = hammer;
@@ -109,7 +111,7 @@ Stats::Stats(Stat sword, Stat axe, Stat hammer, Stat bow, Stat magic) {
     statMagic = magic;
 }
 
-Stats::Stats (const Stats &s)
+Stats::Stats ( const Stats &s )
 {
     statSword = s.statSword;
     statAxe = s.statAxe;
@@ -118,10 +120,20 @@ Stats::Stats (const Stats &s)
     statMagic = s.statMagic;
 }
 
-Stat* Stats::GetStats (unsigned char skill)
+Stats::Stats ( Stat *stats )
 {
-    switch (skill)
-    {
+    statSword = stats[0];
+    statAxe = stats[1];
+    statHammer = stats[2];
+    statBow = stats[3];
+    statMagic = stats[4];
+
+    delete[] stats;
+}
+
+Stat* Stats::GetStats ( unsigned char skill )
+{
+    switch ( skill ) {
     case 's':
         return &statSword;
         break;
@@ -146,30 +158,50 @@ Stat* Stats::GetStats (unsigned char skill)
     return nullptr;
 }
 
-void Stats::SetLevel (unsigned char skill, unsigned char level)
+void Stats::SetLevel ( unsigned char skill, unsigned char level )
 {
-    GetStats (skill)->level = level;
+    GetStats ( skill )->level = level;
 }
 
-unsigned char Stats::GetLevel (unsigned char skill)
+unsigned char Stats::GetLevel ( unsigned char skill )
 {
-    return GetStats (skill)->level;
+    return GetStats ( skill )->level;
 }
 
-unsigned char Stats::CalculateLevel (bool combatLevel)
+unsigned char Stats::CalculateLevel ( bool combatLevel )
 {
     int *stats = new int[5] {statSword.level, statAxe.level, statHammer.level, statBow.level, statMagic.level};
-    unsigned char greatest = Maths::Greatest (stats, 5);
+    unsigned char level = 0;
+    if (combatLevel) {
+        level = Maths::Greatest ( stats, 5 );
+    } else {
+        level = Maths::Mean( stats, 5 );
+    }
     delete[] stats;
-    return greatest;
+    return level;
 }
 
 
-
-Stat* PlayerStats::GetStats (unsigned char skill)
+PlayerStats::PlayerStats(Stat *stats, Stat *playerStats) : Stats(stats)
 {
-    switch (skill)
-    {
+    statBlacksmith = playerStats[0];
+    statTailor = playerStats[1];
+    statSpellcraft = playerStats[2];
+    statMining = playerStats[3];
+    statLumberjack = playerStats[4];
+
+    delete[] stats;
+    delete[] playerStats;
+}
+
+PlayerStats::~PlayerStats()
+{
+
+}
+
+Stat* PlayerStats::GetStats ( unsigned char skill )
+{
+    switch ( skill ) {
     case 's':
         return &statSword;
         break;
@@ -214,25 +246,20 @@ Stat* PlayerStats::GetStats (unsigned char skill)
     return nullptr;
 }
 
-bool PlayerStats::ApplyExperience (unsigned char skill, float x, bool applyAsLevels)
+bool PlayerStats::ApplyExperience ( unsigned char skill, float x, bool applyAsLevels )
 {
-    Stat *s = GetStats (skill);
+    Stat *s = GetStats ( skill );
 
-    if (s != nullptr)
-    {
-        if (!applyAsLevels)
-        {
+    if ( s != nullptr ) {
+        if ( !applyAsLevels ) {
             s->experience += x;
 
-            if (s->experience / Maths::Pow (1.2f, s->level++) > 100)
-            {
+            if ( s->experience / Maths::Pow ( 1.2f, s->level++ ) > 100 ) {
                 s->level++;
                 return true;
             }
-        }
-        else
-        {
-            s->experience = 100 * Maths::Pow (1.2f, (unsigned int) x);
+        } else {
+            s->experience = 100 * Maths::Pow ( 1.2f, ( unsigned int ) x );
             s->level = x;
             return true;
         }
@@ -241,63 +268,58 @@ bool PlayerStats::ApplyExperience (unsigned char skill, float x, bool applyAsLev
     return false;
 }
 
-void PlayerStats::SetLevel (unsigned char skill, unsigned char level)
+void PlayerStats::SetLevel ( unsigned char skill, unsigned char level )
 {
-    Stat *s = GetStats (skill);
+    Stat *s = GetStats ( skill );
 
-    if (s != nullptr)
-    {
-        ApplyExperience (level - s->level, level, true);
+    if ( s != nullptr ) {
+        ApplyExperience ( level - s->level, level, true );
     }
 }
 
-float PlayerStats::NextLevel (unsigned char skill)
+float PlayerStats::NextLevel ( unsigned char skill )
 {
-    Stat *s = GetStats (skill);
+    Stat *s = GetStats ( skill );
 
-    if (s != nullptr)
-    {
-        return NextLevel (s);
+    if ( s != nullptr ) {
+        return NextLevel ( s );
     }
 
     return -1;
 }
 
-float PlayerStats::NextLevel (Stat *s)
+float PlayerStats::NextLevel ( Stat *s )
 {
-    return (100 * Maths::Pow (1.2f, s->level + 1) ) - GetExperience (s);
+    return ( 100 * Maths::Pow ( 1.2f, s->level + 1 ) ) - GetExperience ( s );
 }
 
-float PlayerStats::GetExperience (unsigned char skill)
+float PlayerStats::GetExperience ( unsigned char skill )
 {
-    return GetStats (skill)->experience;
+    return GetStats ( skill )->experience;
 }
 
-float PlayerStats::GetExperience (Stat *s)
+float PlayerStats::GetExperience ( Stat *s )
 {
     return s->experience;
 }
 
-unsigned char PlayerStats::GetLevel (unsigned char skill)
+unsigned char PlayerStats::GetLevel ( unsigned char skill )
 {
-    return GetStats (skill)->level;
+    return GetStats ( skill )->level;
 }
 
-unsigned char PlayerStats::GetLevel (Stat *s)
+unsigned char PlayerStats::GetLevel ( Stat *s )
 {
     return s->level;
 }
 
-unsigned char PlayerStats::CalculateLevel (bool combatLevel)
+unsigned char PlayerStats::CalculateLevel ( bool combatLevel )
 {
-    if (combatLevel)
-    {
+    if ( combatLevel ) {
         return Stats::CalculateLevel();
-    }
-    else
-    {
+    } else {
         int *values = new int[5] {statBlacksmith.level, statTailor.level, statMining.level, statLumberjack.level, statSpellcraft.level};
-        unsigned char craftLevel = Maths::Mean (values, 5);
+        unsigned char craftLevel = Maths::Mean ( values, 5 );
         delete[] values;
         return craftLevel;
     }

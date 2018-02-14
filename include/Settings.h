@@ -5,9 +5,13 @@
 
 #include <string>
 #include <SFML/Network/IpAddress.hpp>
+#include <SFML/System/Vector2.hpp>
 
-struct Settings
-{
+/**
+    Settings are a bunch of global variables that are used in a variety of places.
+**/
+
+struct Settings {
 public:
 
     /** Display stuff **/

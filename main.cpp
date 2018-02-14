@@ -13,12 +13,9 @@ int main()
 {
     Engine e;
 
-    if (!e.Start (1280, 720, 32, "Window") )
-    {
+    if ( !e.Start ( 1280, 720, 32, "Window" ) ) {
         return 17;
-    }
-    else
-    {
+    } else {
         return 0;
     }
 }

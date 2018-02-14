@@ -13,15 +13,14 @@
     or a chicken prop
 **/
 
-class GameObject
-{
+class GameObject {
 public:
     GameObject();
     virtual ~GameObject();
 
     sf::Sprite &GetSprite();
     virtual void Update();
-    virtual void Translate (float deltaX, float deltaY);
+    virtual void Translate ( float deltaX, float deltaY );
 
 protected:
     sf::Vector2f position;
