@@ -1,14 +1,13 @@
-<ResourceManifest>
-    <Resource>
-        <Type>manifest</Type>
-        <Filepath>assets/textures/manifest.xml</Filepath>
-    </Resource>
-    <Resource>
-        <Type>manifest</Type>
-        <Filepath>assets/audio/manifest.xml</Filepath>
-    </Resource>
-    <Resource>
-        <Type>manifest</Type>
-        <Filepath>assets/world/manifest.xml</Filepath>
-    </Resource>
-</ResourceManifest>
+<texture>
+    <filepath>assets/textures/entity_testentity.png</filepath>
+    <name>entity_testentity</name>
+</texture>
+<texture>
+    <filepath>assets/textures/interactable_tree_oak.png</filepath>
+    <name>interactable_tree_oak</name>
+</texture>
+
+<texture>
+    <filepath>assets/textures/ui_button.png</filepath>
+    <name>ui_button</name>
+</texture>

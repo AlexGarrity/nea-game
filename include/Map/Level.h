@@ -1,30 +1,43 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
 
-/**
-    Level Properties:
-        Every Level is 50x50, comprised of Nodes.
-        One node is equivalent to 1m x 1m, for scaling purposes.
-        A node has two properties: its type and its feature
+#include <string>
 
-**/
+class Tile {
+public:
+    Tile() {};
+    Tile (unsigned char id, unsigned char p)
+    {
+        tileId = id;
+        tileProperty = p;
+    }
+
+    void Set (unsigned char id, unsigned char p = 'n')
+    {
+        tileId = id;
+        tileProperty = p;
+    }
+
+    unsigned char tileId;
+    unsigned char tileProperty;
+};
+
 
 class Level {
 public:
     Level();
     virtual ~Level();
 
-    sf::Rect<int> rectangle;
-
+    void LoadLevel (std::string &level);
+    Tile *GetTiles();
 protected:
 
 private:
-    unsigned char WorldX;
-    unsigned char WorldY;
+    unsigned char *FindNextTile (std::string &level);
 
-    //std::array<
+    Tile tiles[50][50];
 
 };
 

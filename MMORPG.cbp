@@ -12,14 +12,13 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-Wall" />
-					<Add option="-std=c++11" />
+					<Add option="-Weverything" />
 					<Add option="-g" />
-					<Add directory="include/UI" />
+					<Add option="-std=c++11" />
 				</Compiler>
 				<Linker>
-					<Add library="sfml-network-d" />
 					<Add library="sfml-audio-d" />
+					<Add library="sfml-network-d" />
 					<Add library="sfml-graphics-d" />
 					<Add library="sfml-window-d" />
 					<Add library="sfml-system-d" />
@@ -31,9 +30,8 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-march=i386" />
 					<Add option="-O4" />
-					<Add directory="include/UI" />
+					<Add option="-march=i386" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -50,12 +48,11 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
 					<Add option="-march=corei7-avx" />
 					<Add option="-Weffc++" />
 					<Add option="-Wextra" />
-					<Add option="-Wall" />
-					<Add option="-std=c++11" />
-					<Add directory="include/UI" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network" />
@@ -67,75 +64,57 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-ftrapv" />
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
 			<Add directory="../SFML/include" />
-			<Add directory="include" />
-			<Add directory="include/Objects" />
-			<Add directory="include/GameStates" />
-			<Add directory="include/Utilities" />
-			<Add directory="include/UI" />
-			<Add directory="include/Components" />
+			<Add directory="include/Entity" />
+			<Add directory="include/Gamestates" />
+			<Add directory="include/Managers" />
 			<Add directory="include/Map" />
+			<Add directory="include/UIElements" />
+			<Add directory="include/Utilities" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
 			<Add option="-pthread" />
 			<Add directory="../SFML/lib" />
 		</Linker>
-		<Unit filename="include/Components/Animation.h" />
-		<Unit filename="include/Components/Animator.h" />
-		<Unit filename="include/Components/Statblock.h" />
-		<Unit filename="include/Debug.h" />
 		<Unit filename="include/Engine.h" />
-		<Unit filename="include/GameStates/GS_Gameplay.h" />
-		<Unit filename="include/GameStates/GS_Initialise.h" />
-		<Unit filename="include/GameStates/GS_Login.h" />
-		<Unit filename="include/GameStates/GameState.h" />
-		<Unit filename="include/GameStates/StateManager.h" />
+		<Unit filename="include/Entity/Entity.h" />
+		<Unit filename="include/Gamestates/Gamestate.h" />
+		<Unit filename="include/Gamestates/GamestateGameplay.h" />
+		<Unit filename="include/Gamestates/GamestateLogin.h" />
+		<Unit filename="include/Gamestates/GamestateMenu.h" />
+		<Unit filename="include/Managers/EntityManager.h" />
+		<Unit filename="include/Managers/NetworkManager.h" />
+		<Unit filename="include/Managers/ResourceManager.h" />
+		<Unit filename="include/Managers/StateManager.h" />
+		<Unit filename="include/Managers/UIManager.h" />
+		<Unit filename="include/Managers/WindowManager.h" />
 		<Unit filename="include/Map/Level.h" />
-		<Unit filename="include/Map/Map.h" />
-		<Unit filename="include/Map/MapCell.h" />
-		<Unit filename="include/NetworkManager.h" />
-		<Unit filename="include/ObjectManager.h" />
-		<Unit filename="include/Objects/Entity.h" />
-		<Unit filename="include/Objects/GameObject.h" />
-		<Unit filename="include/ResourceManager.h" />
-		<Unit filename="include/Settings.h" />
-		<Unit filename="include/UI/UIButton.h" />
-		<Unit filename="include/UI/UIElement.h" />
-		<Unit filename="include/UI/UILabel.h" />
-		<Unit filename="include/UI/UIManager.h" />
+		<Unit filename="include/Map/NavMesh.h" />
+		<Unit filename="include/UIElements/UIElement.h" />
 		<Unit filename="include/Utilities/Crypto.h" />
-		<Unit filename="include/Utilities/Maths.h" />
-		<Unit filename="include/Utilities/Time.hpp" />
-		<Unit filename="include/WindowManager.h" />
+		<Unit filename="include/Utilities/Timing.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Components/Animation.cpp" />
-		<Unit filename="src/Components/Animator.cpp" />
-		<Unit filename="src/Components/Statblock.cpp" />
-		<Unit filename="src/Debug.cpp" />
 		<Unit filename="src/Engine.cpp" />
-		<Unit filename="src/GameStates/GS_Gameplay.cpp" />
-		<Unit filename="src/GameStates/GS_Initialise.cpp" />
-		<Unit filename="src/GameStates/GS_Login.cpp" />
-		<Unit filename="src/GameStates/GameState.cpp" />
-		<Unit filename="src/GameStates/StateManager.cpp" />
+		<Unit filename="src/Entity/Entity.cpp" />
+		<Unit filename="src/Gamestates/Gamestate.cpp" />
+		<Unit filename="src/Gamestates/GamestateGameplay.cpp" />
+		<Unit filename="src/Gamestates/GamestateLogin.cpp" />
+		<Unit filename="src/Gamestates/GamestateMenu.cpp" />
+		<Unit filename="src/Managers/EntityManager.cpp" />
+		<Unit filename="src/Managers/NetworkManager.cpp" />
+		<Unit filename="src/Managers/ResourceManager.cpp" />
+		<Unit filename="src/Managers/StateManager.cpp" />
+		<Unit filename="src/Managers/UIManager.cpp" />
+		<Unit filename="src/Managers/WindowManager.cpp" />
 		<Unit filename="src/Map/Level.cpp" />
-		<Unit filename="src/Map/Map.cpp" />
-		<Unit filename="src/Map/MapCell.cpp" />
-		<Unit filename="src/NetworkManager.cpp" />
-		<Unit filename="src/ObjectManager.cpp" />
-		<Unit filename="src/Objects/Entity.cpp" />
-		<Unit filename="src/Objects/GameObject.cpp" />
-		<Unit filename="src/ResourceManager.cpp" />
-		<Unit filename="src/UI/UIButton.cpp" />
-		<Unit filename="src/UI/UIElement.cpp" />
-		<Unit filename="src/UI/UILabel.cpp" />
-		<Unit filename="src/UI/UIManager.cpp" />
+		<Unit filename="src/Map/NavMesh.cpp" />
+		<Unit filename="src/UIElements/UIElement.cpp" />
 		<Unit filename="src/Utilities/Crypto.cpp" />
-		<Unit filename="src/Utilities/Maths.cpp" />
-		<Unit filename="src/Utilities/Time.cpp" />
-		<Unit filename="src/WindowManager.cpp" />
+		<Unit filename="src/Utilities/Timing.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

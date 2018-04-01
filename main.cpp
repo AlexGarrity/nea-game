@@ -2,6 +2,8 @@
 
 #include "Engine.h"
 
+#include "Crypto.h"
+
 /**
     Main Function -
         Creates and instance of the engine, then checks if it's started correctly
@@ -11,11 +13,10 @@
 
 int main()
 {
-    Engine e;
-
-    if ( !e.Start ( 1280, 720, 32, "Window" ) ) {
-        return 17;
-    } else {
+    if (Engine::Start (1280, 720, 32, "Window") ) {
         return 0;
+    }
+    else {
+        return 17;
     }
 }

@@ -1643,21 +1643,15 @@
 1518280485 source:d:\code\mmorpg\mmorpg\src\windowmanager.cpp
 	"WindowManager.h"
 
-1518280485 source:/home/alex/Documents/MMORPG/MMORPG/main.cpp
+1522227158 source:/home/alex/Documents/MMORPG/MMORPG/main.cpp
 	"Engine.h"
+	"Crypto.h"
 
-1518284267 /home/alex/Documents/MMORPG/MMORPG/include/Engine.h
-	<thread>
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Engine.h
+	<string>
 	"WindowManager.h"
-	"ObjectManager.h"
-	"StateManager.h"
 	"NetworkManager.h"
-	"ResourceManager.h"
-	"UIManager.h"
-	"Time.hpp"
-	"GameObject.h"
-	"Debug.h"
-	"Entity.h"
+	"StateManager.h"
 
 1518284608 /home/alex/Documents/MMORPG/MMORPG/include/WindowManager.h
 	<SFML/Graphics/RenderWindow.hpp>
@@ -2041,10 +2035,11 @@
 	<SFML/Network/IpAddress.hpp>
 	<SFML/System/Vector2.hpp>
 
-1518365047 /home/alex/Documents/MMORPG/MMORPG/include/Utilities/Crypto.h
+1522587682 /home/alex/Documents/MMORPG/MMORPG/include/Utilities/Crypto.h
 	<string>
+	<iostream>
+	<cstring>
 	<fstream>
-	"Debug.h"
 
 1518364968 /home/alex/Documents/MMORPG/MMORPG/include/ResourceManager.h
 	<map>
@@ -2157,7 +2152,7 @@
 1518280486 source:/home/alex/Documents/MMORPG/MMORPG/src/Debug.cpp
 	"Debug.h"
 
-1518538648 source:/home/alex/Documents/MMORPG/MMORPG/src/Engine.cpp
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Engine.cpp
 	"Engine.h"
 
 1518365099 source:/home/alex/Documents/MMORPG/MMORPG/src/GameStates/GameState.cpp
@@ -2175,11 +2170,12 @@
 1518365155 source:/home/alex/Documents/MMORPG/MMORPG/src/GameStates/StateManager.cpp
 	"StateManager.h"
 
-1518189763 source:/home/alex/Documents/MMORPG/MMORPG/src/Map/Level.cpp
+1518810318 source:/home/alex/Documents/MMORPG/MMORPG/src/Map/Level.cpp
 	"Level.h"
 
-1518280486 /home/alex/Documents/MMORPG/MMORPG/include/Map/Level.h
-	<SFML/Graphics/Rect.hpp>
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Map/Level.h
+	<SFML/System/Vector2.hpp>
+	<string>
 
 1518280486 source:/home/alex/Documents/MMORPG/MMORPG/src/Map/Map.cpp
 	"Map.h"
@@ -2220,7 +2216,7 @@
 1518280486 source:/home/alex/Documents/MMORPG/MMORPG/src/UI/UIManager.cpp
 	"UIManager.h"
 
-1518280486 source:/home/alex/Documents/MMORPG/MMORPG/src/Utilities/Crypto.cpp
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Utilities/Crypto.cpp
 	"Crypto.h"
 
 1518280486 source:/home/alex/Documents/MMORPG/MMORPG/src/Utilities/Maths.cpp
@@ -2241,5 +2237,115 @@
 1518555642 /home/alex/Documents/MMORPG/MMORPG/include/UI/UILabel.h
 	<SFML/Graphics/Text.hpp>
 	<string>
+	"UIElement.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Managers/WindowManager.h
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/Event.hpp>
+	"NetworkManager.h"
+
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Managers/WindowManager.cpp
+	"WindowManager.h"
+
+1518957515 source:/home/alex/Documents/MMORPG/MMORPG/src/Entity/Entity.cpp
+	"Entity.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Entity/Entity.h
+	<SFML/Graphics/Sprite.hpp>
+
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Managers/EntityManager.cpp
+	"EntityManager.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Managers/EntityManager.h
+	"NetworkManager.h"
+	"ResourceManager.h"
+	"Entity.h"
+	<map>
+	<string>
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Managers/NetworkManager.h
+	<SFML/Network.hpp>
+	<queue>
+	"Crypto.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Managers/StateManager.h
+	<queue>
+	"NetworkManager.h"
+	"WindowManager.h"
+	"Gamestate.h"
+	"GamestateLogin.h"
+	"GamestateGameplay.h"
+	"GamestateMenu.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Gamestates/Gamestate.h
+	"EntityManager.h"
+	"NetworkManager.h"
+	"ResourceManager.h"
+	"WindowManager.h"
+	"UIManager.h"
+
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Managers/NetworkManager.cpp
+	"NetworkManager.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Gamestates/GamestateLogin.h
+	"Gamestate.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Gamestates/GamestateGameplay.h
+	"Gamestate.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Gamestates/GamestateMenu.h
+	"Gamestate.h"
+
+1518632098 source:/home/alex/Documents/MMORPG/MMORPG/src/Gamestates/Gamestate.cpp
+	"Gamestate.h"
+
+1519481481 source:/home/alex/Documents/MMORPG/MMORPG/src/Gamestates/GamestateGameplay.cpp
+	"GamestateGameplay.h"
+
+1519647528 source:/home/alex/Documents/MMORPG/MMORPG/src/Gamestates/GamestateLogin.cpp
+	"GamestateLogin.h"
+
+1519481481 source:/home/alex/Documents/MMORPG/MMORPG/src/Gamestates/GamestateMenu.cpp
+	"GamestateMenu.h"
+
+1522584537 source:/home/alex/Documents/MMORPG/MMORPG/src/Managers/StateManager.cpp
+	"StateManager.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Managers/ResourceManager.h
+	<string>
+	<map>
+	<vector>
+	<fstream>
+	<sstream>
+	<SFML/Graphics/Texture.hpp>
+	"Entity.h"
+
+1518801653 source:/home/alex/Documents/MMORPG/MMORPG/src/Map/NavMesh.cpp
+	"NavMesh.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Map/NavMesh.h
+
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Managers/ResourceManager.cpp
+	"ResourceManager.h"
+
+1522587681 source:/home/alex/Documents/MMORPG/MMORPG/src/Utilities/Timing.cpp
+	"Timing.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Utilities/Timing.h
+	<SFML/System/Clock.hpp>
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/Managers/UIManager.h
+	<vector>
+	"UIElement.h"
+
+1522587681 /home/alex/Documents/MMORPG/MMORPG/include/UIElements/UIElement.h
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Sprite.hpp>
+
+1519482315 source:/home/alex/Documents/MMORPG/MMORPG/src/Managers/UIManager.cpp
+	"UIManager.h"
+
+1519422504 source:/home/alex/Documents/MMORPG/MMORPG/src/UIElements/UIElement.cpp
 	"UIElement.h"
 
