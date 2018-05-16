@@ -2,71 +2,39 @@
 
 std::map<std::string, Entity*> ResourceManager::entityMap;
 std::map<std::string, sf::Texture*> ResourceManager::textureMap;
+sf::Font ResourceManager::font;
 
 
-ManifestParser::ManifestParser (std::vector<std::string> &m)
+ManifestParser::ManifestParser (std::string fPath)
 {
-    manifest = &m;
+    filepath = fPath;
 }
 
 ManifestParser::~ManifestParser()
 {
-    delete manifest;
+
 }
 
 void ManifestParser::Parse ()
 {
-    std::string currentTag = "";
-    std::string type = "";
+    std::ifstream reader;
+    std::string currentLine = "";
 
-    for (unsigned int i = 0; i < manifest->size(); i++) {
-        currentTag = GetTag (manifest->at (i) );
+    unsigned int indentationLevel = 0;
 
-        if (currentTag == "entity") {
-            //Get the entity properties and create a new entity using them
-            type = "entity";
-
-        }
-        else if (currentTag == "texture") {
-            //Load using the provided filepath and name
-            std::string filepath = "";
-            std::string name = "";
-            i++;
-
-            while (currentTag != "/texture") {
-                currentTag = GetTag (manifest->at (i) );
-
-                if (currentTag == "") {
-
-                }
-            }
-
-        }
-        else if (currentTag == "manifest") {
-            //Create a new manifest parser and parse
-        }
+    while (std::getline (reader, currentLine) ) {
+        ParseLine(currentLine);
     }
 }
 
-std::string ManifestParser::GetTag (std::string line)
-{
-    unsigned int startMarker = 0;
-    unsigned int endMarker = 0;
-
-    for (unsigned int i = 0; i < line.size(); i++) {
-        if (line[i] == '<' && i != (line.size() - 2) ) {
-            startMarker = i+ 1;
+void ManifestParser::ParseLine(std::string line) {
+    for (char c : line) {
+        if (c == '{' && indentationLevel < 1) {
+            indentationLevel += 1;
         }
-        else if (line[i] == '>') {
-            endMarker = i -1;
+        if (c == '}' && indentationLevel < 0) {
+            indentationLevel -= 1;
         }
-    }
-
-    if (endMarker > startMarker) {
-        return "";
-    }
-    else {
-        return line.substr (startMarker, endMarker - startMarker);
     }
 }
 
@@ -90,9 +58,12 @@ sf::Texture &ResourceManager::GetTexture (std::string textureName)
     if (texture != textureMap.end() ) {
         return *texture->second;
     }
-    else {
-        return *textureMap.at ("error_not_found");
-    }
+    return *textureMap.at ("texture");
+}
+
+sf::Font &ResourceManager::GetFont()
+{
+    return font;
 }
 
 
@@ -108,9 +79,9 @@ bool ResourceManager::LoadEntity (Entity* entity, std::string entityName)
 
 bool ResourceManager::LoadTexture (std::string filePath, std::string textureName)
 {
-    sf::Texture* tex;
+    sf::Texture* tex = new sf::Texture();
 
-    if (tex->loadFromFile (filePath) ) {
+    if (tex->loadFromFile(filePath)) {
         textureMap.insert (std::make_pair (textureName, tex) );
         return true;
     }
@@ -120,22 +91,24 @@ bool ResourceManager::LoadTexture (std::string filePath, std::string textureName
 
 bool ResourceManager::LoadFromManifest (std::string filePath)
 {
-    std::ifstream fileReader (filePath, std::fstream::in);
-    std::vector<std::string> manifest;
-    std::string line = "";
-
-    if (!fileReader.good() ) {
-        return false;
-    }
-
-    while (fileReader.good() ) {
-        std::getline (fileReader, line);
-        manifest.push_back (line);
-    }
-
-    ManifestParser mParser (manifest);
+    ManifestParser mParser (filePath);
     mParser.Parse();
 
-    fileReader.close();
     return true;
+}
+
+void ResourceManager::Initialise()
+{
+    LoadTexture("./assets/texture.png", "texture");
+
+    //LoadTexture("./assets/textures/error/error_not_found.png", "error_not_found");        Unused
+    LoadTexture("./assets/textures/error/error_no_connection.png", "error_no_connection");
+
+    LoadTexture("./assets/textures/UI/button_login.png", "UI_Button_Login");
+    LoadTexture("./assets/textures/UI/text_field.png", "UI_Text_Field");
+    LoadTexture("./assets/textures/UI/splash.png", "UI_Splash");
+    LoadTexture("./assets/textures/UI/status.png", "UI_Status_Bar");
+
+    font.loadFromFile("./assets/fonts/Handlee-Regular.ttf");
+
 }

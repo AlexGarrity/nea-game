@@ -2,14 +2,9 @@
 #define STATEMANAGER_H
 
 #include <queue>
+#include "Timing.h"
 
-#include "NetworkManager.h"
-#include "WindowManager.h"
-
-#include "Gamestate.h"
-#include "GamestateLogin.h"
-#include "GamestateGameplay.h"
-#include "GamestateMenu.h"
+class Gamestate;
 
 class StateManager {
 public:
@@ -20,12 +15,16 @@ public:
     static void PopState();
 
     static Gamestate* GetState();
-    static Gamestate* NextState();
 
 protected:
 
 private:
+    static Gamestate* currentGamestate;
+
     static std::queue<Gamestate*> stateQueue;
+    static bool exiting;
+    static float timeToNextUpdate;
+    static float lastFrameTime;
 };
 
 #endif // STATEMANAGER_H

@@ -9,27 +9,39 @@
 #include <sstream>
 
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Font.hpp>
 
 #include "Entity.h"
 
-class ManifestParser {
+struct ManifestNode {
+    std::string attributeName;
+    std::map<std::string, std::string> attributeValues;
 
+    void AddValue(std::string aName, std::string aValue) {
+        attributeValues.insert(std::make_pair(aName, aValue));
+    }
+};
+
+class ManifestParser {
 public:
-    ManifestParser (std::vector<std::string> &m);
+    ManifestParser (std::string filepath);
     ~ManifestParser();
 
     void Parse ();
 
 private:
-    std::string GetTag (std::string line);
+    void ParseLine(std::string line);
 
-    std::vector<std::string> *manifest= nullptr;
+    std::string filepath;
+    unsigned int indentationLevel = 0;
+
 };
 
 class ResourceManager {
 public:
     static Entity *GetEntity (std::string entityName);
     static sf::Texture &GetTexture (std::string textureName);
+    static sf::Font &GetFont();
 
     static void Initialise();
 
@@ -44,6 +56,7 @@ private:
 
     static std::map<std::string, Entity*> entityMap;
     static std::map<std::string, sf::Texture*> textureMap;
+    static sf::Font font;
 };
 
 #endif // RESOURCEMANAGER_H

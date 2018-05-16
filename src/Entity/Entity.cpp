@@ -31,3 +31,11 @@ void Entity::Translate (sf::Vector2f delta)
     currentPosition += delta;
     this->setPosition (currentPosition);
 }
+
+void Entity::SetPosition (sf::Vector2f position) {
+    this->SetPosition(position);
+}
+
+void Entity::Path() {
+
+}

@@ -12,8 +12,9 @@ public:
 
     void Translate (float deltaX, float deltaY);
     void Translate (sf::Vector2f delta);
+    void SetPosition(sf::Vector2f position);
 
-    void PathTo (sf::Vector2u mapCoordinate);
+    void Path();
 
 protected:
 

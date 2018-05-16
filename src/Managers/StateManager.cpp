@@ -1,22 +1,34 @@
 #include "StateManager.h"
 
-std::queue<Gamestate*> StateManager::stateQueue;
+#include "Gamestate.h"
 
-bool NetworkManager::loggedIn = false;
+std::queue<Gamestate*> StateManager::stateQueue;
+bool StateManager::exiting = false;
+Gamestate *StateManager::currentGamestate = nullptr;
+float StateManager::timeToNextUpdate = 16.66666666667;
+float StateManager::lastFrameTime = 0;
 
 void StateManager::Start()
 {
-    if (stateQueue.empty() ) {
-        PushState (new GamestateLogin() );
-    }
+
 }
 
 void StateManager::Update()
 {
-    Gamestate *gamestate = GetState();
-    gamestate->Input();
-    gamestate->Update();
-    gamestate->Draw ();
+
+
+    while (!exiting) {
+        timeToNextUpdate -= Timing::deltaTime;
+        if (timeToNextUpdate >= 0) {
+            currentGamestate = GetState();
+            currentGamestate->Input();
+            currentGamestate->Update();
+            currentGamestate->Draw ();
+
+            WindowManager::WindowOpen() ?: exiting = true; //Ternary statement evaluates whether or not the window is still open.  Updates exiting accordingly
+            timeToNextUpdate = 16.66666666667 - Timing::deltaTime;      //Set the time to next update to 1/60th of a second, minus the last frame time
+        }
+    }
 }
 
 void StateManager::PopState()
@@ -26,25 +38,16 @@ void StateManager::PopState()
 
 Gamestate* StateManager::GetState()
 {
-    return stateQueue.front();
-}
-
-Gamestate* StateManager::NextState()
-{
-    if (!NetworkManager::GetLoggedIn() ) {
-        return new GamestateLogin();
+    if (!stateQueue.empty()) {
+        return stateQueue.front();
     }
-    else if (false) {
-
-    }
-    else {
-        return new GamestateGameplay();
-    }
+    return nullptr;
 }
 
 void StateManager::PushState (Gamestate *gamestate)
 {
     if (gamestate != nullptr) {
         stateQueue.push (gamestate);
+        std::cout << "Pushed a new state \n";
     }
 }

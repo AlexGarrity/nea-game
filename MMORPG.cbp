@@ -12,9 +12,14 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-Weverything" />
+					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-std=c++11" />
+					<Add option="-v" />
+					<Add directory="include/UIElements" />
+					<Add directory="include/GameUI" />
+					<Add directory="include/Gamestates" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-audio-d" />
@@ -32,6 +37,10 @@
 				<Compiler>
 					<Add option="-O4" />
 					<Add option="-march=i386" />
+					<Add directory="include/UIElements" />
+					<Add directory="include/GameUI" />
+					<Add directory="include/Gamestates" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -50,9 +59,11 @@
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-std=c++11" />
-					<Add option="-march=corei7-avx" />
-					<Add option="-Weffc++" />
-					<Add option="-Wextra" />
+					<Add option="-target x86_64-pc-win32-gnu" />
+					<Add directory="include/UIElements" />
+					<Add directory="include/GameUI" />
+					<Add directory="include/Gamestates" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network" />
@@ -66,7 +77,7 @@
 		<Compiler>
 			<Add option="-ftrapv" />
 			<Add option="-Wall" />
-			<Add option="-std=c++11" />
+			<Add option="-std=c++14" />
 			<Add directory="../SFML/include" />
 			<Add directory="include/Entity" />
 			<Add directory="include/Gamestates" />
@@ -84,6 +95,7 @@
 		<Unit filename="include/Entity/Entity.h" />
 		<Unit filename="include/Gamestates/Gamestate.h" />
 		<Unit filename="include/Gamestates/GamestateGameplay.h" />
+		<Unit filename="include/Gamestates/GamestateInitialise.h" />
 		<Unit filename="include/Gamestates/GamestateLogin.h" />
 		<Unit filename="include/Gamestates/GamestateMenu.h" />
 		<Unit filename="include/Managers/EntityManager.h" />
@@ -94,7 +106,10 @@
 		<Unit filename="include/Managers/WindowManager.h" />
 		<Unit filename="include/Map/Level.h" />
 		<Unit filename="include/Map/NavMesh.h" />
+		<Unit filename="include/UIElements/UIButton.h" />
 		<Unit filename="include/UIElements/UIElement.h" />
+		<Unit filename="include/UIElements/UIImage.h" />
+		<Unit filename="include/UIElements/UITextField.h" />
 		<Unit filename="include/Utilities/Crypto.h" />
 		<Unit filename="include/Utilities/Timing.h" />
 		<Unit filename="main.cpp" />
@@ -102,6 +117,7 @@
 		<Unit filename="src/Entity/Entity.cpp" />
 		<Unit filename="src/Gamestates/Gamestate.cpp" />
 		<Unit filename="src/Gamestates/GamestateGameplay.cpp" />
+		<Unit filename="src/Gamestates/GamestateInitialise.cpp" />
 		<Unit filename="src/Gamestates/GamestateLogin.cpp" />
 		<Unit filename="src/Gamestates/GamestateMenu.cpp" />
 		<Unit filename="src/Managers/EntityManager.cpp" />
@@ -112,11 +128,17 @@
 		<Unit filename="src/Managers/WindowManager.cpp" />
 		<Unit filename="src/Map/Level.cpp" />
 		<Unit filename="src/Map/NavMesh.cpp" />
+		<Unit filename="src/UIElements/UIButton.cpp" />
 		<Unit filename="src/UIElements/UIElement.cpp" />
+		<Unit filename="src/UIElements/UIImage.cpp" />
+		<Unit filename="src/UIElements/UITextField.cpp" />
 		<Unit filename="src/Utilities/Crypto.cpp" />
 		<Unit filename="src/Utilities/Timing.cpp" />
 		<Extensions>
-			<code_completion />
+			<code_completion>
+				<search_path add="../SFML-2.4.0/include/SFML" />
+				<search_path add="../SFML-2.4.0/lib" />
+			</code_completion>
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />

@@ -1,8 +1,10 @@
 #ifndef GAMESTATELOGIN_H
 #define GAMESTATELOGIN_H
 
-#include "Gamestate.h"
+#include <functional>
 
+#include "Gamestate.h"
+#include "GamestateGameplay.h"
 
 class GamestateLogin : public Gamestate {
 public:
@@ -16,7 +18,13 @@ public:
 protected:
 
 private:
-    bool loggedIn;
+    void AttemptLogin();
+
+    UITextField *nameField = nullptr;
+    UITextField *passField = nullptr;
+    UIButton *loginButton = nullptr;
+
+    bool loggedIn = false;
 };
 
 #endif // GAMESTATELOGIN_H

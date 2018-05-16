@@ -1,8 +1,7 @@
 /**     Alex Garrity, 2018      **/
 
-#include "Engine.h"
-
-#include "Crypto.h"
+#include "StateManager.h"
+#include "GamestateInitialise.h"
 
 /**
     Main Function -
@@ -13,10 +12,7 @@
 
 int main()
 {
-    if (Engine::Start (1280, 720, 32, "Window") ) {
-        return 0;
-    }
-    else {
-        return 17;
-    }
+    StateManager::Start();
+    StateManager::PushState (new GamestateInitialise() );
+    StateManager::Update();
 }

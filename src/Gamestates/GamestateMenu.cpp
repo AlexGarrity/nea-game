@@ -2,7 +2,7 @@
 
 GamestateMenu::GamestateMenu()
 {
-    //ctor
+
 }
 
 GamestateMenu::~GamestateMenu()
