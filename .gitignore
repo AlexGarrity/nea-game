@@ -28,3 +28,12 @@
 
 # Code::Blocks unnecessary files
 *.layout
+
+# IDEA Files
+.idea/
+
+# Swap files
+*.swp
+
+# Build directory
+build/
